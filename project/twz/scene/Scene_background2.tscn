@@ -1,0 +1,38 @@
+[gd_scene load_steps=3 format=3 uid="uid://cjkcflxnqc8xe"]
+
+[ext_resource type="Texture2D" uid="uid://cm0xwpleckhcu" path="res://twz/image/Majin Fuuin no Densetsu (20).png" id="1_feiwf"]
+[ext_resource type="Texture2D" uid="uid://d36bdirxi53nk" path="res://twz/image/!celiannadoors.png" id="2_ugpyv"]
+
+[node name="ColorRect" type="ColorRect"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.203922, 0.137255, 0.027451, 1)
+metadata/_edit_lock_ = true
+
+[node name="background" type="Sprite2D" parent="."]
+position = Vector2(984, 144)
+rotation = 1.57513
+scale = Vector2(2.99693, 1.07854)
+texture = ExtResource("1_feiwf")
+region_enabled = true
+region_rect = Rect2(160, 988, 96, 310)
+metadata/_edit_lock_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(984, 464)
+rotation = 1.57329
+scale = Vector2(3.81531, 1.08238)
+texture = ExtResource("1_feiwf")
+region_enabled = true
+region_rect = Rect2(160, 988, 96, 310)
+metadata/_edit_lock_ = true
+
+[node name="door" type="Sprite2D" parent="."]
+position = Vector2(32, 32)
+texture = ExtResource("2_ugpyv")
+region_enabled = true
+region_rect = Rect2(192, 358, 49, 71)
+metadata/_edit_lock_ = true

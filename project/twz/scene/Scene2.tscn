@@ -1,0 +1,88 @@
+[gd_scene load_steps=10 format=3 uid="uid://dkkgoh4m4i11t"]
+
+[ext_resource type="PackedScene" uid="uid://cjkcflxnqc8xe" path="res://twz/scene/Scene_background2.tscn" id="1_ysjpm"]
+[ext_resource type="PackedScene" uid="uid://hkl3vto6ug0w" path="res://twz/scene/Player.tscn" id="2_ce51d"]
+[ext_resource type="Script" path="res://twz/script_twz/change_scene2.gd" id="3_a6kgr"]
+[ext_resource type="Script" path="res://twz/script_twz/chicken.gd" id="4_d3kqs"]
+[ext_resource type="Texture2D" uid="uid://do3lp76e4oupa" path="res://twz/image/鸡子.png" id="5_bj55y"]
+[ext_resource type="PackedScene" uid="uid://cuffef2nu0y14" path="res://twz/scene/Ui.tscn" id="6_mhr8t"]
+[ext_resource type="PackedScene" uid="uid://cxb8tymg2335v" path="res://twz/scene/Inventory_face.tscn" id="7_g51wy"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_epepo"]
+radius = 43.0465
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_kopsc"]
+
+[node name="Node2D" type="Node2D"]
+scale = Vector2(0.99654, 1)
+
+[node name="ColorRect" parent="." instance=ExtResource("1_ysjpm")]
+color = Color(0.223529, 0.12549, 0.0117647, 1)
+
+[node name="player" parent="." instance=ExtResource("2_ce51d")]
+position = Vector2(-667.309, -352)
+scale = Vector2(1.03857, 1.18944)
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("3_a6kgr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(33, 90)
+shape = SubResource("CircleShape2D_epepo")
+metadata/_edit_lock_ = true
+
+[node name="chicken" type="CharacterBody2D" parent="."]
+script = ExtResource("4_d3kqs")
+
+[node name="Node2D" type="Node2D" parent="chicken"]
+
+[node name="ji" type="Sprite2D" parent="chicken/Node2D"]
+position = Vector2(894.094, 99)
+texture = ExtResource("5_bj55y")
+region_enabled = true
+region_rect = Rect2(174, 221, 38, 34)
+
+[node name="ji" type="Sprite2D" parent="chicken/Node2D/ji"]
+position = Vector2(46.1598, 145)
+texture = ExtResource("5_bj55y")
+region_enabled = true
+region_rect = Rect2(174, 221, 38, 34)
+
+[node name="ji2" type="Sprite2D" parent="chicken/Node2D/ji/ji"]
+position = Vector2(7.02426, 59)
+texture = ExtResource("5_bj55y")
+region_enabled = true
+region_rect = Rect2(174, 221, 38, 34)
+
+[node name="ji" type="Sprite2D" parent="chicken/Node2D/ji/ji/ji2"]
+position = Vector2(31.1077, -54)
+texture = ExtResource("5_bj55y")
+region_enabled = true
+region_rect = Rect2(174, 221, 38, 34)
+
+[node name="ji2" type="Sprite2D" parent="chicken/Node2D/ji/ji/ji2"]
+position = Vector2(9.03139, 233)
+texture = ExtResource("5_bj55y")
+region_enabled = true
+region_rect = Rect2(174, 221, 38, 34)
+
+[node name="ji" type="Sprite2D" parent="chicken/Node2D/ji/ji/ji2/ji2"]
+position = Vector2(-1693.86, -164)
+texture = ExtResource("5_bj55y")
+offset = Vector2(1741.02, 47)
+region_enabled = true
+region_rect = Rect2(174, 221, 38, 34)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="chicken"]
+position = Vector2(237.823, 185)
+scale = Vector2(4.65075, -3.17583)
+shape = SubResource("CircleShape2D_kopsc")
+metadata/_edit_lock_ = true
+
+[node name="UI" parent="." instance=ExtResource("6_mhr8t")]
+
+[node name="inventory_face2" parent="UI" instance=ExtResource("7_g51wy")]
+
+[connection signal="toggle_inventory" from="player" to="UI/inventory_face2" method="_on_player_toggle_inventory"]
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
+[connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]
