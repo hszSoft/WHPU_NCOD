@@ -1,0 +1,66 @@
+[gd_scene load_steps=2 format=3 uid="uid://b0v76g6ry7tu6"]
+
+[ext_resource type="PackedScene" uid="uid://ch0jjhiog7haf" path="res://twz/scene/Goods.tscn" id="1_d8i8a"]
+
+[node name="inventory" type="PanelContainer"]
+custom_minimum_size = Vector2(50, 50)
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+
+[node name="itemgrid" type="GridContainer" parent="MarginContainer"]
+layout_mode = 2
+columns = 8
+
+[node name="goods" parent="MarginContainer/itemgrid" instance=ExtResource("1_d8i8a")]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="goods2" parent="MarginContainer/itemgrid" instance=ExtResource("1_d8i8a")]
+layout_mode = 2
+
+[node name="goods3" parent="MarginContainer/itemgrid" instance=ExtResource("1_d8i8a")]
+layout_mode = 2
+
+[node name="goods4" parent="MarginContainer/itemgrid" instance=ExtResource("1_d8i8a")]
+layout_mode = 2
+
+[node name="goods9" parent="MarginContainer/itemgrid" instance=ExtResource("1_d8i8a")]
+layout_mode = 2
+
+[node name="goods10" parent="MarginContainer/itemgrid" instance=ExtResource("1_d8i8a")]
+layout_mode = 2
+
+[node name="goods11" parent="MarginContainer/itemgrid" instance=ExtResource("1_d8i8a")]
+layout_mode = 2
+
+[node name="goods12" parent="MarginContainer/itemgrid" instance=ExtResource("1_d8i8a")]
+layout_mode = 2
+
+[node name="goods13" parent="MarginContainer/itemgrid" instance=ExtResource("1_d8i8a")]
+layout_mode = 2
+
+[node name="goods14" parent="MarginContainer/itemgrid" instance=ExtResource("1_d8i8a")]
+layout_mode = 2
+
+[node name="goods15" parent="MarginContainer/itemgrid" instance=ExtResource("1_d8i8a")]
+layout_mode = 2
+
+[node name="goods16" parent="MarginContainer/itemgrid" instance=ExtResource("1_d8i8a")]
+layout_mode = 2
+
+[node name="goods17" parent="MarginContainer/itemgrid" instance=ExtResource("1_d8i8a")]
+layout_mode = 2
+
+[node name="goods5" parent="MarginContainer/itemgrid" instance=ExtResource("1_d8i8a")]
+layout_mode = 2
+
+[node name="goods6" parent="MarginContainer/itemgrid" instance=ExtResource("1_d8i8a")]
+layout_mode = 2
+
+[node name="goods7" parent="MarginContainer/itemgrid" instance=ExtResource("1_d8i8a")]
+layout_mode = 2
+
+[node name="goods8" parent="MarginContainer/itemgrid" instance=ExtResource("1_d8i8a")]
+layout_mode = 2

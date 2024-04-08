@@ -1,0 +1,60 @@
+[gd_scene load_steps=8 format=3 uid="uid://doai8ypk5qjq6"]
+
+[ext_resource type="Texture2D" uid="uid://cm0xwpleckhcu" path="res://twz/image/Majin Fuuin no Densetsu (20).png" id="1_xop6m"]
+[ext_resource type="Texture2D" uid="uid://d36bdirxi53nk" path="res://twz/image/!celiannadoors.png" id="2_je0fw"]
+[ext_resource type="PackedScene" uid="uid://hkl3vto6ug0w" path="res://twz/scene/Player.tscn" id="3_gtwso"]
+[ext_resource type="Script" path="res://twz/script_twz/change_scene1.gd" id="4_0nire"]
+[ext_resource type="Script" path="res://twz/script_twz/inventory_face.gd" id="5_sjqtv"]
+[ext_resource type="PackedScene" uid="uid://b0v76g6ry7tu6" path="res://twz/scene/Inventory.tscn" id="6_130yj"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7owt1"]
+radius = 9.11166
+
+[node name="map" type="Node2D"]
+
+[node name="backgound" type="Sprite2D" parent="."]
+position = Vector2(581, 326)
+scale = Vector2(3.54938, 1.66154)
+texture = ExtResource("1_xop6m")
+region_enabled = true
+region_rect = Rect2(25, 407, 324, 390)
+metadata/_edit_lock_ = true
+
+[node name="door" type="Sprite2D" parent="backgound"]
+position = Vector2(145.096, -22.8704)
+scale = Vector2(0.202522, 0.533617)
+texture = ExtResource("2_je0fw")
+region_enabled = true
+region_rect = Rect2(237, 361, 48, 71)
+
+[node name="player" parent="." instance=ExtResource("3_gtwso")]
+position = Vector2(160, -56)
+scale = Vector2(0.663313, 1.12204)
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("4_0nire")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(1080, 328)
+rotation = 1.49627
+scale = Vector2(4.41576, -3.91399)
+shape = SubResource("CircleShape2D_7owt1")
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="inventory_face" type="Control" parent="UI"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("5_sjqtv")
+
+[node name="inventory" parent="UI/inventory_face" instance=ExtResource("6_130yj")]
+visible = false
+layout_mode = 0
+offset_right = 412.0
+offset_bottom = 152.0
+
+[connection signal="toggle_inventory" from="player" to="UI/inventory_face" method="_on_player_toggle_inventory"]
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
+[connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]
