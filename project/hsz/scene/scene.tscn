@@ -42,7 +42,7 @@ tile_data = PoolIntArray( -983006, 0, 393217, -917499, 0, 393217, -917492, 0, 39
 current = true
 
 [node name="House1" parent="." instance=ExtResource( 6 )]
-position = Vector2( 405, -320 )
+position = Vector2( 602, -406 )
 scale = Vector2( 2, 2 )
 
 [node name="Tree1" parent="." instance=ExtResource( 5 )]
