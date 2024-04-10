@@ -5,7 +5,7 @@
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 10.5, 3 )
 
-[node name="Tree1" type="KinematicBody2D"]
+[node name="Tree" type="KinematicBody2D"]
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 0, -38 )
