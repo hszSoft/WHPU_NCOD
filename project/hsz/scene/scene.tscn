@@ -1,8 +1,11 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://hsz/character/daogu/daogu.tscn" type="PackedScene" id=1]
 [ext_resource path="res://hsz/tileset/grassland.tres" type="TileSet" id=2]
 [ext_resource path="res://hsz/tileset/decorations.tres" type="TileSet" id=3]
+[ext_resource path="res://hsz/spritesheet/tree2.tscn" type="PackedScene" id=4]
+[ext_resource path="res://hsz/spritesheet/tree1.tscn" type="PackedScene" id=5]
+[ext_resource path="res://hsz/spritesheet/house1.tscn" type="PackedScene" id=6]
 
 [node name="Node2D" type="Node2D"]
 
@@ -37,3 +40,13 @@ tile_data = PoolIntArray( -983006, 0, 393217, -917499, 0, 393217, -917492, 0, 39
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
+
+[node name="House1" parent="." instance=ExtResource( 6 )]
+position = Vector2( 405, -320 )
+scale = Vector2( 2, 2 )
+
+[node name="Tree1" parent="." instance=ExtResource( 5 )]
+position = Vector2( -13, -307 )
+
+[node name="Tree2" parent="." instance=ExtResource( 4 )]
+position = Vector2( 818, -216 )

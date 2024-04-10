@@ -81,7 +81,6 @@ _global_script_class_icons={
 [application]
 
 config/name="NCOD"
-run/main_scene="res://hsz/scene/scene.tscn"
 
 [display]
 
