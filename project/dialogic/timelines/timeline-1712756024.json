@@ -1,0 +1,39 @@
+{
+	"events": [
+		{
+			"character": "character-1712756230.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "老夫我前几天看到一个很稀奇的画面，我养的鸡和兔居然一起在闲荡？！"
+		},
+		{
+			"character": "character-1712756061.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "啊？鸡子和兔子？跨越种族的友谊还是爱情？"
+		},
+		{
+			"character": "character-1712756061.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "这怎么可能？别开玩笑啊！能带我去看看吗？"
+		},
+		{
+			"character": "character-1712756230.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": ""
+		},
+		{
+			"character": "character-1712756230.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "更神奇的事：鸡子带着兔子尝试飞行！！"
+		}
+	],
+	"metadata": {
+		"dialogic-version": "1.5.1",
+		"file": "timeline-1712756024.json",
+		"name": "chicken_rubbit"
+	}
+}
