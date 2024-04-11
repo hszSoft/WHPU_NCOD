@@ -1,57 +1,22 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=16 format=2]
 
-[ext_resource path="res://hsz/character/daogu/run_left.png" type="Texture" id=1]
-[ext_resource path="res://hsz/character/daogu/idle.png" type="Texture" id=2]
-[ext_resource path="res://hsz/character/daogu/run_right.png" type="Texture" id=3]
+[ext_resource path="res://hsz/character/daogu/daogu_normal.png" type="Texture" id=1]
+[ext_resource path="res://hsz/utils/state_machine.gd" type="Script" id=2]
+[ext_resource path="res://hsz/character/daogu/state/idle_left.gd" type="Script" id=3]
 [ext_resource path="res://hsz/character/daogu/daogu.gd" type="Script" id=4]
+[ext_resource path="res://hsz/character/daogu/state/run_right.gd" type="Script" id=5]
+[ext_resource path="res://hsz/character/daogu/state/run_left.gd" type="Script" id=6]
+[ext_resource path="res://hsz/character/daogu/state/idle_right.gd" type="Script" id=7]
+[ext_resource path="res://hsz/others/shadow.png" type="Texture" id=8]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 9, 8.5 )
+extents = Vector2( 6, 2.5 )
 
-[sub_resource type="Animation" id=5]
-resource_name = "Idle"
-length = 0.1
-tracks/0/type = "value"
-tracks/0/path = NodePath("Idle:visible")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ true ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("RunLeft:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ false ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("RunRight:visible")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ false ]
-}
-
-[sub_resource type="Animation" id=2]
+[sub_resource type="Animation" id=7]
+resource_name = "IdleLeft"
 length = 0.001
 tracks/0/type = "value"
-tracks/0/path = NodePath("RunLeft:frame")
+tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -59,194 +24,133 @@ tracks/0/enabled = true
 tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
-"update": 0,
+"update": 1,
 "values": [ 0 ]
 }
-tracks/1/type = "value"
-tracks/1/path = NodePath("RunRight:frame")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
+
+[sub_resource type="Animation" id=8]
+resource_name = "IdleRight"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ 0 ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("Idle:visible")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ true ]
-}
-tracks/3/type = "value"
-tracks/3/path = NodePath("RunRight:visible")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ false ]
-}
-tracks/4/type = "value"
-tracks/4/path = NodePath("RunLeft:visible")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ false ]
+"update": 1,
+"values": [ 4 ]
 }
 
 [sub_resource type="Animation" id=3]
-resource_name = "RunLeft"
-length = 0.8
-loop = true
-step = 0.2
+length = 0.001
 tracks/0/type = "value"
-tracks/0/path = NodePath("RunLeft:frame")
+tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.2, 0.4, 0.6 ),
-"transitions": PoolRealArray( 1, 1, 1, 1 ),
-"update": 1,
-"values": [ 0, 1, 2, 3 ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("Idle:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ false ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("RunRight:visible")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ false ]
-}
-tracks/3/type = "value"
-tracks/3/path = NodePath("RunLeft:visible")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ true ]
+"update": 0,
+"values": [ 8 ]
 }
 
 [sub_resource type="Animation" id=4]
-resource_name = "RunRight"
-length = 0.8
+resource_name = "RunDown"
+length = 0.72
 loop = true
-step = 0.2
+step = 0.18
 tracks/0/type = "value"
-tracks/0/path = NodePath("RunRight:frame")
+tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.2, 0.4, 0.6 ),
+"times": PoolRealArray( 0, 0.18, 0.36, 0.54 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 8, 9, 10, 11 ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "RunLeft"
+length = 0.72
+loop = true
+step = 0.18
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.18, 0.36, 0.54 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 1,
 "values": [ 0, 1, 2, 3 ]
 }
-tracks/1/type = "value"
-tracks/1/path = NodePath("Idle:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+
+[sub_resource type="Animation" id=6]
+resource_name = "RunRight"
+length = 0.72
+loop = true
+step = 0.18
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.18, 0.36, 0.54 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 1,
-"values": [ false ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("RunLeft:visible")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ false ]
-}
-tracks/3/type = "value"
-tracks/3/path = NodePath("RunRight:visible")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ true ]
+"values": [ 4, 5, 6, 7 ]
 }
 
 [node name="Daogu" type="KinematicBody2D"]
 script = ExtResource( 4 )
+acceleration = 1800.0
+max_speed = 100.0
 
-[node name="Idle" type="Sprite" parent="."]
-position = Vector2( 0, -30 )
-scale = Vector2( 2, 2 )
-texture = ExtResource( 2 )
-
-[node name="RunLeft" type="Sprite" parent="."]
-visible = false
-position = Vector2( 0, -30 )
-scale = Vector2( 2, 2 )
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 0, -15 )
 texture = ExtResource( 1 )
-hframes = 4
+hframes = 12
+frame = 8
 
-[node name="RunRight" type="Sprite" parent="."]
-visible = false
-position = Vector2( 0, -30 )
-scale = Vector2( 2, 2 )
-texture = ExtResource( 3 )
-hframes = 4
+[node name="Shadow" type="Sprite" parent="."]
+texture = ExtResource( 8 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 0, -8.5 )
+position = Vector2( 0, -2.5 )
 shape = SubResource( 1 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/Idle = SubResource( 5 )
-anims/RESET = SubResource( 2 )
-anims/RunLeft = SubResource( 3 )
-anims/RunRight = SubResource( 4 )
+anims/IdleLeft = SubResource( 7 )
+anims/IdleRight = SubResource( 8 )
+anims/RESET = SubResource( 3 )
+anims/RunDown = SubResource( 4 )
+anims/RunLeft = SubResource( 5 )
+anims/RunRight = SubResource( 6 )
+
+[node name="StateMachine" type="Node" parent="."]
+script = ExtResource( 2 )
+initial_state = NodePath("IdleLeft")
+
+[node name="IdleLeft" type="Node" parent="StateMachine"]
+script = ExtResource( 3 )
+
+[node name="IdleRight" type="Node" parent="StateMachine"]
+script = ExtResource( 7 )
+
+[node name="RunLeft" type="Node" parent="StateMachine"]
+script = ExtResource( 6 )
+
+[node name="RunRight" type="Node" parent="StateMachine"]
+script = ExtResource( 5 )

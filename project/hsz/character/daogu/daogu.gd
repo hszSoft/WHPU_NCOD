@@ -1,12 +1,15 @@
-extends KinematicBody2D
+extends Character
 
-# Called when the node enters the scene tree for the first time.
+onready var state_machine := $StateMachine
+
+func get_input_direction():
+	var input_direction := Vector2.ZERO
+	input_direction.x = int(Input.is_action_pressed("move_right")) - int(Input.is_action_pressed("move_left"))
+	input_direction.y = int(Input.is_action_pressed("move_down")) - int(Input.is_action_pressed("move_up"))
+	return input_direction.normalized()
+
 func _ready():
-	pass # Replace with function body.
-
-func _process(delta):
-	if Input.is_action_pressed("action_left"):
-		$AnimationPlayer.play("RunLeft")
-	elif Input.is_action_pressed("action_right"):
-		$AnimationPlayer.play("RunRight")
 	pass
+
+func _physics_process(delta):
+	move(get_input_direction(), delta)
