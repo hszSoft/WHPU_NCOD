@@ -4,31 +4,99 @@
 			"character": "character-1712756230.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "老夫我前几天看到一个很稀奇的画面，我养的鸡和兔居然一起在闲荡？！"
+			"text": "老夫我前几天看到一个很稀奇的画面，我养的鸡和兔居然一起在闲荡?!"
 		},
 		{
 			"character": "character-1712756061.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "啊？鸡子和兔子？跨越种族的友谊还是爱情？"
+			"text": "啊?鸡子和兔子?跨越物种的友谊还是爱情?\n有点意思了!"
+		},
+		{
+			"character": "character-1712756230.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "更神奇的是鸡子尝试带着兔子飞行!!"
 		},
 		{
 			"character": "character-1712756061.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "这怎么可能？别开玩笑啊！能带我去看看吗？"
+			"text": "难以置信!你能带我去看看吗?"
 		},
 		{
 			"character": "character-1712756230.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": ""
+			"text": "... ..."
+		},
+		{
+			"character": "character-1712756230.json",
+			"event_id": "dialogic_010",
+			"options": [
+
+			],
+			"portrait": "",
+			"question": "唉!农场的栅栏坏了，我养的那些鸡兔全跑了，年轻人你一定会帮我找到它们的，对吗?"
+		},
+		{
+			"choice": "当然，我还想看看那有趣的事呢！",
+			"condition": "",
+			"definition": "",
+			"event_id": "dialogic_011",
+			"value": ""
+		},
+		{
+			"character": "character-1712756061.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "谢谢你，年轻人！"
+		},
+		{
+			"choice": "不了，有点麻烦。",
+			"condition": "",
+			"definition": "",
+			"event_id": "dialogic_011",
+			"value": ""
 		},
 		{
 			"character": "character-1712756230.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "更神奇的事：鸡子带着兔子尝试飞行！！"
+			"text": "在这之后我会给你一本《孙子算经》!"
+		},
+		{
+			"character": "character-1712756061.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "那太棒了，我对古代数学很有兴趣!"
+		},
+		{
+			"event_id": "dialogic_013"
+		},
+		{
+			"character": "character-1712756061.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "那么我该怎么去找那些鸡兔呢?"
+		},
+		{
+			"character": "character-1712756230.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "它们就在东边!前几天我数了，它们上有三十五头，下九十四足，东边可能有一些其他的鸡兔，但是我只要我的那些鸡兔!"
+		},
+		{
+			"character": "character-1712756061.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "这不就是“鸡兔同笼”的问题吗?"
+		},
+		{
+			"character": "character-1712756230.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "是的，我相信你一定会解决，之后我会给你《孙子算经》。你可以深入了解!"
 		}
 	],
 	"metadata": {

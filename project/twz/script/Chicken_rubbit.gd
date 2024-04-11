@@ -15,6 +15,7 @@ func _on_Chicken_rubbit_body_exited(body):
 
 func   _physics_process(delta):
 	if entered and Input.is_action_just_pressed("pick"):
+		print('ni')
 		$AudioStreamPlayer.play(0)
 		yield($AudioStreamPlayer,"finished")
 		queue_free()
