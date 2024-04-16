@@ -1,8 +1,6 @@
 class_name StateNode
 extends Node
 
-var state_machine: StateMachine = null
-
 func enter():
 	pass
 	

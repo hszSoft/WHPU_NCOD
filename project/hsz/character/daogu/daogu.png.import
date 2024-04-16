@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/daogu_pickup.png-2d1cf23b94b2c695d9d8627943c4acf8.stex"
+path="res://.import/daogu.png-b71273e078c28181f86fade9d49870cd.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://hsz/character/daogu/daogu_pickup.png"
-dest_files=[ "res://.import/daogu_pickup.png-2d1cf23b94b2c695d9d8627943c4acf8.stex" ]
+source_file="res://hsz/character/daogu/daogu.png"
+dest_files=[ "res://.import/daogu.png-b71273e078c28181f86fade9d49870cd.stex" ]
 
 [params]
 

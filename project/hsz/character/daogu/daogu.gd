@@ -13,3 +13,7 @@ func _ready():
 
 func _physics_process(delta):
 	move(get_input_direction(), delta)
+	if velocity.length() == 0.0:
+		state_machine.set_param("is_moving", false)
+	else:
+		state_machine.set_param("is_moving", true)
