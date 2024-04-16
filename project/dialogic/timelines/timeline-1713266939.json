@@ -1,10 +1,15 @@
 {
 	"events": [
-
+		{
+			"character": "character-1713271662.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "于宋朝出生，道古自幼聪慧且对算术之学颇感兴趣；科举中进士，本于建康府（今江苏南京）任职；但不幸母亲因病去世，赶回湖州故宅守孝三年。"
+		}
 	],
 	"metadata": {
 		"dialogic-version": "1.5.1",
 		"file": "timeline-1713266939.json",
-		"name": "new1"
+		"name": "Narrator_front"
 	}
 }

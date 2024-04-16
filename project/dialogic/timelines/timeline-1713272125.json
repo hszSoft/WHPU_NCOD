@@ -1,0 +1,56 @@
+{
+	"events": [
+		{
+			"character": "character-1712756061.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "阁下是？是在敝舍前等待何人吗？"
+		},
+		{
+			"character": "character-1713271590.json",
+			"event_id": "dialogic_010",
+			"options": [
+
+			],
+			"portrait": "",
+			"question": "朋友，我想委托你抓些鸡和兔；县里最近来了位官太爷巡视，那些芝麻官想好生招待这位大人，好攀上这层关系；于是委托我找你买些野味，这箱子里一些小小礼物，不成敬意，还望能赏我几分薄面。"
+		},
+		{
+			"choice": "既是如此的话，我当然原因予你一份风水人情，毕竟相见是缘！",
+			"condition": "",
+			"definition": "",
+			"event_id": "dialogic_011",
+			"value": ""
+		},
+		{
+			"character": "character-1713271590.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "朋友，请放心，我经商向来公平公正不亏待每一位客人。"
+		},
+		{
+			"choice": "可惜我身居樊笼已久，适才逍遥半载，今日岂可又为五斗米而折腰？",
+			"condition": "",
+			"definition": "",
+			"event_id": "dialogic_011",
+			"value": ""
+		},
+		{
+			"character": "character-1713271590.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "岂是如此？朋友，是在下为那五斗米折腰，而需要你帮助我罢了，何况身处尘世，多一些钱财总不会是坏事，就当是卖在下一个风水人情，如何？"
+		},
+		{
+			"character": "character-1712756061.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "阁下说得确实有几分道理，又何况伸手不打笑脸人，那就当是你我间不打不相识；我出力你出钱，合作愉快。"
+		}
+	],
+	"metadata": {
+		"dialogic-version": "1.5.1",
+		"file": "timeline-1713272125.json",
+		"name": "Start"
+	}
+}

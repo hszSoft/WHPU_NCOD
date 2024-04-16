@@ -1,0 +1,59 @@
+{
+	"events": [
+		{
+			"character": "character-1713271590.json",
+			"event_id": "dialogic_010",
+			"options": [
+
+			],
+			"portrait": "",
+			"question": "朋友，我这里可都是上等的好货，价格也公道。"
+		},
+		{
+			"choice": "交货",
+			"condition": "",
+			"definition": "",
+			"event_id": "dialogic_011",
+			"value": ""
+		},
+		{
+			"character": "character-1713271590.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "刚好满足我的需求，朋友真是神机妙算。"
+		},
+		{
+			"character": "character-1712756061.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "哪里哪里，这只是简单数学问题罢了。"
+		},
+		{
+			"character": "character-1713271590.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "仁兄真是谦虚啊。"
+		},
+		{
+			"choice": "离开",
+			"condition": "",
+			"definition": "",
+			"event_id": "dialogic_011",
+			"value": ""
+		},
+		{
+			"character": "character-1713271590.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "下次光临！"
+		},
+		{
+			"event_id": "dialogic_013"
+		}
+	],
+	"metadata": {
+		"dialogic-version": "1.5.1",
+		"file": "timeline-1713273162.json",
+		"name": "First"
+	}
+}

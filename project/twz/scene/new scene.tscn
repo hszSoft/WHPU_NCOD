@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=2]
+[gd_scene load_steps=29 format=2]
 
 [ext_resource path="res://hsz/tileset/decorations.tres" type="TileSet" id=1]
 [ext_resource path="res://hsz/spritesheet/house1.tscn" type="PackedScene" id=2]
@@ -19,6 +19,7 @@
 [ext_resource path="res://hsz/spritesheet/billboard2.tscn" type="PackedScene" id=17]
 [ext_resource path="res://hsz/spritesheet/wood2.tscn" type="PackedScene" id=18]
 [ext_resource path="res://hsz/spritesheet/billboard1.tscn" type="PackedScene" id=19]
+[ext_resource path="res://hsz/character/daogu/daogu.tscn" type="PackedScene" id=20]
 [ext_resource path="res://hsz/spritesheet/rock1.tscn" type="PackedScene" id=21]
 [ext_resource path="res://hsz/spritesheet/box2.tscn" type="PackedScene" id=22]
 [ext_resource path="res://hsz/spritesheet/dead_wood2.tscn" type="PackedScene" id=23]
@@ -1545,3 +1546,13 @@ position = Vector2( 2263, 1352 )
 
 [node name="Wood116" parent="Map/YSort" instance=ExtResource( 15 )]
 position = Vector2( 2346, 1276 )
+
+[node name="Daogu" parent="Map/YSort" instance=ExtResource( 20 )]
+scale = Vector2( 1.5, 1.5 )
+max_speed = 150.0
+
+[node name="Camera2D" type="Camera2D" parent="Map/YSort/Daogu"]
+current = true
+drag_margin_h_enabled = true
+drag_margin_v_enabled = true
+smoothing_enabled = true
