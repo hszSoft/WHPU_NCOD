@@ -1,0 +1,13 @@
+[gd_scene format=2]
+
+[node name="Indoor" type="Node2D"]
+
+[node name="Map_in" type="Node2D" parent="."]
+
+[node name="Floor" type="TileMap" parent="Map_in"]
+format = 1
+
+[node name="Furniture" type="TileMap" parent="Map_in"]
+format = 1
+
+[node name="YSort" type="YSort" parent="."]
