@@ -58,7 +58,7 @@ zoom = Vector2( 0.8, 0.8 )
 smoothing_enabled = true
 
 [node name="Test" parent="YSort" instance=ExtResource( 7 )]
-position = Vector2( -90.6667, -62.6667 )
+position = Vector2( 299.333, 274 )
 
 [node name="House1" parent="YSort" instance=ExtResource( 6 )]
 position = Vector2( 242.5, -92 )
@@ -72,10 +72,10 @@ position = Vector2( 409, -108 )
 scale = Vector2( 0.5, 0.5 )
 
 [node name="Test2" parent="YSort" instance=ExtResource( 7 )]
-position = Vector2( 199.333, 22.6667 )
+position = Vector2( 682.667, -95.3333 )
 
 [node name="Test3" parent="YSort" instance=ExtResource( 7 )]
-position = Vector2( 124, -64 )
+position = Vector2( 408, -216.667 )
 
 [node name="Test4" parent="YSort" instance=ExtResource( 7 )]
-position = Vector2( -195.333, 12 )
+position = Vector2( -98.6667, -190 )
