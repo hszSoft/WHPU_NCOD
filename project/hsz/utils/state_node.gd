@@ -1,6 +1,8 @@
 class_name StateNode
 extends Node
 
+var enable_transition: bool = true
+
 func enter():
 	pass
 	

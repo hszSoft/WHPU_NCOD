@@ -19,9 +19,11 @@ func _unhandled_input(event: InputEvent):
 
 func _process(delta: float):
 	current_state.update(delta)
+	if not current_state.enable_transition:
+		return
 	var method_name = "_on_" + current_state.name + "_transition"
 	if has_method(method_name):
-		call(method_name)
+		call(method_name, current_state)
 
 func _physics_process(delta):
 	current_state.physics_update(delta)
@@ -31,6 +33,9 @@ func set_param(name: String, value):
 	
 func get_param(name: String):
 	return params[name]
+	
+func get_current_state():
+	return current_state.name
 
 func transition_to(state_node_name: String):
 	if not has_node(state_node_name):

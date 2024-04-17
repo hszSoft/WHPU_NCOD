@@ -106,25 +106,18 @@ DefaultStateNode="*res://hsz/utils/state_node.gd"
 
 [debug]
 
-settings/fps/force_fps=60
 settings/physics_interpolation/enable_warnings=false
 
 [display]
 
 window/size/width=1080
 window/size/height=720
+window/stretch/mode="viewport"
+window/stretch/aspect="keep"
 
 [editor_plugins]
 
 enabled=PoolStringArray( "res://addons/dialogic/plugin.cfg" )
-
-[global]
-
-Texture=false
-"纹理"=false
-frame=false
-fps=false
-"资源"=false
 
 [gui]
 
@@ -197,3 +190,7 @@ move_down={
 [physics]
 
 common/enable_pause_aware_picking=true
+
+[rendering]
+
+2d/snapping/use_gpu_pixel_snap=true

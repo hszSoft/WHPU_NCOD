@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://hsz/character/daogu/daogu.tscn" type="PackedScene" id=1]
 [ext_resource path="res://hsz/tileset/grassland.tres" type="TileSet" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://hsz/spritesheet/tree2.tscn" type="PackedScene" id=4]
 [ext_resource path="res://hsz/spritesheet/tree1.tscn" type="PackedScene" id=5]
 [ext_resource path="res://hsz/spritesheet/house1.tscn" type="PackedScene" id=6]
+[ext_resource path="res://hsz/monsters/test1/test1.tscn" type="PackedScene" id=7]
 
 [node name="Node2D" type="Node2D"]
 
@@ -56,6 +57,9 @@ current = true
 zoom = Vector2( 0.8, 0.8 )
 smoothing_enabled = true
 
+[node name="Test" parent="YSort" instance=ExtResource( 7 )]
+position = Vector2( -90.6667, -62.6667 )
+
 [node name="House1" parent="YSort" instance=ExtResource( 6 )]
 position = Vector2( 242.5, -92 )
 
@@ -66,3 +70,12 @@ scale = Vector2( 0.5, 0.5 )
 [node name="Tree2" parent="YSort" instance=ExtResource( 4 )]
 position = Vector2( 409, -108 )
 scale = Vector2( 0.5, 0.5 )
+
+[node name="Test2" parent="YSort" instance=ExtResource( 7 )]
+position = Vector2( 199.333, 22.6667 )
+
+[node name="Test3" parent="YSort" instance=ExtResource( 7 )]
+position = Vector2( 124, -64 )
+
+[node name="Test4" parent="YSort" instance=ExtResource( 7 )]
+position = Vector2( -195.333, 12 )
