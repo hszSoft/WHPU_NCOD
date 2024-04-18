@@ -8,7 +8,7 @@ extents = Vector2( 9, 2.5 )
 [node name="Shrub" type="KinematicBody2D"]
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 0, -10 )
+position = Vector2( 0, -9 )
 texture = ExtResource( 1 )
 region_enabled = true
 region_rect = Rect2( 84, 107, 32, 29 )

@@ -3,15 +3,16 @@
 [ext_resource path="res://hsz/spritesheet/spritesheet.png" type="Texture" id=1]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 9, 4.5 )
+extents = Vector2( 10, 5 )
 
 [node name="Shrub" type="KinematicBody2D"]
 
 [node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 0, -13 )
 texture = ExtResource( 1 )
 region_enabled = true
 region_rect = Rect2( 3, 151, 32, 32 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 0, 8.5 )
+position = Vector2( 0, -5 )
 shape = SubResource( 1 )
