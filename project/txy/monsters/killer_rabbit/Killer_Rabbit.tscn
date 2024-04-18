@@ -1,9 +1,9 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://txy/monsters/killer_rabbit/Killer_Rabbit.gd" type="Script" id=1]
 [ext_resource path="res://txy/monsters/chicken_rabbit_assets/Untitled 04-13-2024 10-57-21.png" type="Texture" id=2]
 [ext_resource path="res://hsz/utils/detection/detection.tscn" type="PackedScene" id=3]
-[ext_resource path="res://hsz/ai/provoking/provoking.tscn" type="PackedScene" id=4]
+[ext_resource path="res://hsz/ai/aggressive/aggressive.tscn" type="PackedScene" id=4]
 [ext_resource path="res://txy/softCollision/SoftCollision.tscn" type="PackedScene" id=5]
 
 [sub_resource type="AtlasTexture" id=1]
@@ -33,21 +33,16 @@ animations = [ {
 [sub_resource type="CircleShape2D" id=6]
 radius = 14.3178
 
-[sub_resource type="CircleShape2D" id=7]
-radius = 208.14
-
-[sub_resource type="CircleShape2D" id=8]
-radius = 64.3817
-
 [sub_resource type="CircleShape2D" id=9]
 radius = 14.0357
 
 [node name="Killer_Rabbit" type="KinematicBody2D"]
 script = ExtResource( 1 )
+acceleration = 1800.0
+max_speed = 100.0
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 5 )
-frame = 3
 playing = true
 offset = Vector2( 0, -10 )
 
@@ -55,26 +50,15 @@ offset = Vector2( 0, -10 )
 position = Vector2( 0, -9 )
 shape = SubResource( 6 )
 
-[node name="ProvokingAI" parent="." instance=ExtResource( 4 )]
-chase_detection_path = NodePath("../Detection")
-fear_detection_path = NodePath("../Detection2")
-
-[node name="Detection" parent="." instance=ExtResource( 3 )]
-
-[node name="CollisionShape2D" parent="Detection" index="0"]
-shape = SubResource( 7 )
-
-[node name="Detection2" parent="." instance=ExtResource( 3 )]
-
-[node name="CollisionShape2D" parent="Detection2" index="0"]
-shape = SubResource( 8 )
-
 [node name="SoftCollision" parent="." instance=ExtResource( 5 )]
 
 [node name="CollisionShape2D" parent="SoftCollision" index="0"]
 position = Vector2( 0, -1 )
 shape = SubResource( 9 )
 
-[editable path="Detection"]
-[editable path="Detection2"]
+[node name="AggressiveAI" parent="." instance=ExtResource( 4 )]
+detection_path = NodePath("../Detection")
+
+[node name="Detection" parent="." instance=ExtResource( 3 )]
+
 [editable path="SoftCollision"]
