@@ -50,11 +50,12 @@ max_speed = 100.0
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 5 )
 animation = "jump"
-frame = 3
+frame = 2
 playing = true
 offset = Vector2( 0, -10 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2( 0, -8 )
 shape = SubResource( 6 )
 
@@ -65,17 +66,20 @@ fear_detection_path = NodePath("../Detection2")
 [node name="Detection" parent="." instance=ExtResource( 4 )]
 
 [node name="CollisionShape2D" parent="Detection" index="0"]
+visible = false
 shape = SubResource( 7 )
 
 [node name="Detection2" parent="." instance=ExtResource( 4 )]
 position = Vector2( -2, 1 )
 
 [node name="CollisionShape2D" parent="Detection2" index="0"]
+visible = false
 shape = SubResource( 8 )
 
 [node name="SoftCollision" parent="." instance=ExtResource( 5 )]
 
 [node name="CollisionShape2D" parent="SoftCollision" index="0"]
+visible = false
 shape = SubResource( 9 )
 
 [editable path="Detection"]

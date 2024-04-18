@@ -44,7 +44,7 @@ max_speed = 100.0
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 5 )
 animation = "wander"
-frame = 1
+frame = 2
 playing = true
 offset = Vector2( 0, -14 )
 
