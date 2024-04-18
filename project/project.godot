@@ -74,6 +74,16 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/dialogic/Example Assets/History/HistoryRow.gd"
 }, {
+"base": "Area2D",
+"class": "Hitbox",
+"language": "GDScript",
+"path": "res://hsz/utils/hitbox.gd"
+}, {
+"base": "Area2D",
+"class": "Hurtbox",
+"language": "GDScript",
+"path": "res://hsz/utils/hurtbox.gd"
+}, {
 "base": "Resource",
 "class": "Inv",
 "language": "GDScript",
@@ -113,6 +123,8 @@ _global_script_class_icons={
 "DialogicUtil": "",
 "EnemyDetection": "",
 "HistoryRow": "",
+"Hitbox": "",
+"Hurtbox": "",
 "Inv": "",
 "InvItem": "",
 "InvSlot": "",
@@ -215,9 +227,7 @@ move_down={
 
 2d_physics/layer_1="Map"
 2d_physics/layer_2="Player"
-2d_physics/layer_3="PlayerHitbox"
-2d_physics/layer_4="Enemy"
-2d_physics/layer_5="EnemyHitbox"
+2d_physics/layer_3="Enemy"
 
 [physics]
 
