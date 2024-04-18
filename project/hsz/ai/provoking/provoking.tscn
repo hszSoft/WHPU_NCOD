@@ -1,0 +1,23 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://hsz/ai/provoking/provoking.gd" type="Script" id=1]
+[ext_resource path="res://hsz/behaviors/idle/idle.tscn" type="PackedScene" id=2]
+[ext_resource path="res://hsz/behaviors/fear/fear.tscn" type="PackedScene" id=3]
+[ext_resource path="res://hsz/behaviors/chase/chase.tscn" type="PackedScene" id=4]
+[ext_resource path="res://hsz/behaviors/wander/wander.tscn" type="PackedScene" id=5]
+
+[node name="ProvokingAI" type="Node"]
+script = ExtResource( 1 )
+default_state = NodePath("Idle")
+
+[node name="Idle" parent="." instance=ExtResource( 2 )]
+
+[node name="Timer" type="Timer" parent="Idle"]
+
+[node name="Wander" parent="." instance=ExtResource( 5 )]
+
+[node name="Chase" parent="." instance=ExtResource( 4 )]
+
+[node name="Fear" parent="." instance=ExtResource( 3 )]
+
+[connection signal="timeout" from="Idle/Timer" to="." method="_on_Timer_timeout"]

@@ -4,7 +4,7 @@ var character: Character = null
 var detection: EnemyDetection = null
 
 func physics_update(delta):
-	if detection.player == null:
+	if not detection.can_seek_player():
 		return
-	var direction = (detection.player.global_position - character.global_position).normalized()
+	var direction = (character.global_position - detection.player.global_position).normalized()
 	character.move(direction, delta)

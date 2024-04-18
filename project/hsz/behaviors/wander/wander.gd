@@ -1,6 +1,6 @@
 extends StateNode
 
-onready var character = owner
+var character: Character = null
 onready var timer := $Timer
 
 var direction : Vector2

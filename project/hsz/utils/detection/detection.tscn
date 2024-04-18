@@ -3,7 +3,7 @@
 [ext_resource path="res://hsz/utils/detection/detection.gd" type="Script" id=1]
 
 [sub_resource type="CircleShape2D" id=1]
-radius = 64.0
+radius = 128.0
 
 [node name="Detection" type="Area2D"]
 collision_layer = 0

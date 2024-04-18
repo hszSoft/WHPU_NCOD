@@ -1,12 +1,9 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://hsz/monsters/test1/test1.gd" type="Script" id=1]
 [ext_resource path="res://hsz/monsters/test1/bat.png" type="Texture" id=2]
-[ext_resource path="res://hsz/behaviors/wander/wander.tscn" type="PackedScene" id=3]
-[ext_resource path="res://hsz/behaviors/idle/idle.tscn" type="PackedScene" id=4]
-[ext_resource path="res://hsz/monsters/test1/test_ai_sm.gd" type="Script" id=5]
+[ext_resource path="res://hsz/ai/provoking/provoking.tscn" type="PackedScene" id=3]
 [ext_resource path="res://hsz/others/shadow.png" type="Texture" id=6]
-[ext_resource path="res://hsz/behaviors/chase/chase.tscn" type="PackedScene" id=7]
 [ext_resource path="res://hsz/utils/detection/detection.tscn" type="PackedScene" id=8]
 
 [sub_resource type="Animation" id=1]
@@ -45,10 +42,16 @@ tracks/0/keys = {
 radius = 6.0
 height = 0.0
 
+[sub_resource type="CircleShape2D" id=4]
+radius = 32.0
+
+[sub_resource type="CircleShape2D" id=5]
+radius = 256.0
+
 [node name="Test" type="KinematicBody2D"]
 script = ExtResource( 1 )
 acceleration = 1800.0
-max_speed = 60.0
+max_speed = 150.0
 
 [node name="Shadow" type="Sprite" parent="."]
 texture = ExtResource( 6 )
@@ -67,20 +70,19 @@ anims/RESET = SubResource( 2 )
 position = Vector2( 0, -4 )
 shape = SubResource( 3 )
 
-[node name="Detection" parent="." instance=ExtResource( 8 )]
+[node name="FearDetection" parent="." instance=ExtResource( 8 )]
 
-[node name="AIStateMachine" type="Node" parent="."]
-script = ExtResource( 5 )
-default_state = NodePath("Idle")
-idle_transition_probability = 20.0
+[node name="CollisionShape2D" parent="FearDetection" index="0"]
+shape = SubResource( 4 )
 
-[node name="Idle" parent="AIStateMachine" instance=ExtResource( 4 )]
+[node name="ChaseDetection" parent="." instance=ExtResource( 8 )]
 
-[node name="Timer" type="Timer" parent="AIStateMachine/Idle"]
+[node name="CollisionShape2D" parent="ChaseDetection" index="0"]
+shape = SubResource( 5 )
 
-[node name="Wander" parent="AIStateMachine" instance=ExtResource( 3 )]
+[node name="ProvokingAI" parent="." instance=ExtResource( 3 )]
+chase_detection_path = NodePath("../ChaseDetection")
+fear_detection_path = NodePath("../FearDetection")
 
-[node name="Chase" parent="AIStateMachine" instance=ExtResource( 7 )]
-detection_path = NodePath("../../Detection")
-
-[connection signal="timeout" from="AIStateMachine/Idle/Timer" to="AIStateMachine" method="_on_Timer_timeout"]
+[editable path="FearDetection"]
+[editable path="ChaseDetection"]
