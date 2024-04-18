@@ -1,13 +1,131 @@
-[gd_scene format=2]
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://hsz/spritesheet/opend_box.tscn" type="PackedScene" id=1]
+[ext_resource path="res://hsz/spritesheet/desk.tscn" type="PackedScene" id=2]
+[ext_resource path="res://hsz/spritesheet/woodean_barrel.tscn" type="PackedScene" id=3]
+[ext_resource path="res://hsz/spritesheet/barrel.tscn" type="PackedScene" id=4]
+[ext_resource path="res://hsz/spritesheet/crate.tscn" type="PackedScene" id=5]
+[ext_resource path="res://hsz/spritesheet/chair.tscn" type="PackedScene" id=6]
+[ext_resource path="res://hsz/spritesheet/closed_box.tscn" type="PackedScene" id=7]
+[ext_resource path="res://hsz/tileset/swamp_tiles.tres" type="TileSet" id=8]
+[ext_resource path="res://hsz/spritesheet/wine_barrel.tscn" type="PackedScene" id=9]
+[ext_resource path="res://hsz/spritesheet/empty_wine_barrel.tscn" type="PackedScene" id=10]
+[ext_resource path="res://hsz/spritesheet/thatch_pile.tscn" type="PackedScene" id=11]
+[ext_resource path="res://hsz/spritesheet/thatch_grass.tscn" type="PackedScene" id=12]
 
 [node name="Indoor" type="Node2D"]
 
 [node name="Map_in" type="Node2D" parent="."]
 
 [node name="Floor" type="TileMap" parent="Map_in"]
+tile_set = ExtResource( 8 )
+cell_size = Vector2( 32, 32 )
 format = 1
+tile_data = PoolIntArray( 0, 1, 0, 1, 1, 1, 2, 1, 1, 3, 1, 1, 4, 1, 1, 5, 1, 1, 6, 1, 1, 7, 1, 1, 8, 1, 1, 9, 1, 1, 10, 1, 1, 11, 1, 1, 12, 1, 1, 13, 1, 1, 14, 1, 1, 15, 1, 1, 16, 1, 1, 17, 1, 2, 65536, 1, 0, 65537, 1, 1, 65538, 1, 1, 65539, 1, 1, 65540, 1, 1, 65541, 1, 1, 65542, 1, 1, 65543, 1, 1, 65544, 1, 1, 65545, 1, 1, 65546, 1, 1, 65547, 1, 1, 65548, 1, 1, 65549, 1, 1, 65550, 1, 1, 65551, 1, 1, 65552, 1, 1, 65553, 1, 2, 131072, 1, 0, 131073, 1, 1, 131074, 1, 1, 131075, 1, 1, 131076, 1, 1, 131077, 1, 1, 131078, 1, 1, 131079, 1, 1, 131080, 1, 1, 131081, 1, 1, 131082, 1, 1, 131083, 1, 1, 131084, 1, 1, 131085, 1, 1, 131086, 1, 1, 131087, 1, 1, 131088, 1, 1, 131089, 1, 2, 196608, 1, 0, 196609, 1, 1, 196610, 1, 1, 196611, 1, 1, 196612, 1, 1, 196613, 1, 1, 196614, 1, 1, 196615, 1, 1, 196616, 1, 1, 196617, 1, 1, 196618, 1, 1, 196619, 1, 1, 196620, 1, 1, 196621, 1, 1, 196622, 1, 1, 196623, 1, 1, 196624, 1, 1, 196625, 1, 2, 262144, 1, 0, 262145, 1, 1, 262146, 1, 1, 262147, 1, 1, 262148, 1, 1, 262149, 1, 1, 262150, 1, 1, 262151, 1, 1, 262152, 1, 1, 262153, 1, 1, 262154, 1, 1, 262155, 1, 1, 262156, 1, 1, 262157, 1, 1, 262158, 1, 1, 262159, 1, 1, 262160, 1, 1, 262161, 1, 2, 327680, 1, 0, 327681, 1, 1, 327682, 1, 1, 327683, 1, 1, 327684, 1, 1, 327685, 1, 1, 327686, 1, 1, 327687, 1, 1, 327688, 1, 1, 327689, 1, 1, 327690, 1, 1, 327691, 1, 1, 327692, 1, 1, 327693, 1, 1, 327694, 1, 1, 327695, 1, 1, 327696, 1, 1, 327697, 1, 2 )
+
+[node name="Wall" type="TileMap" parent="Map_in"]
+tile_set = ExtResource( 8 )
+cell_size = Vector2( 32, 32 )
+format = 1
+tile_data = PoolIntArray( -262144, 0, 0, -262143, 0, 1, -262142, 0, 1, -262141, 0, 1, -262140, 0, 1, -262139, 0, 1, -262138, 0, 1, -262137, 0, 1, -262136, 0, 1, -262135, 0, 1, -262134, 0, 1, -262133, 0, 1, -262132, 0, 1, -262131, 0, 1, -262130, 0, 1, -262129, 0, 1, -262128, 0, 1, -262127, 0, 2, -196608, 0, 65536, -196607, 0, 65537, -196606, 0, 65537, -196605, 0, 65537, -196604, 0, 65537, -196603, 0, 65537, -196602, 0, 65537, -196601, 0, 65537, -196600, 0, 65537, -196599, 0, 65537, -196598, 0, 65537, -196597, 0, 65537, -196596, 0, 65537, -196595, 0, 65537, -196594, 0, 65537, -196593, 0, 65537, -196592, 0, 65537, -196591, 0, 65538, -131072, 0, 65536, -131071, 0, 65537, -131070, 0, 65537, -131069, 0, 65537, -131068, 0, 65537, -131067, 0, 65537, -131066, 0, 65537, -131065, 0, 65537, -131064, 0, 65537, -131063, 0, 65537, -131062, 0, 65537, -131061, 0, 65537, -131060, 0, 65537, -131059, 0, 65537, -131058, 0, 65537, -131057, 0, 65537, -131056, 0, 65537, -131055, 0, 65538, -65536, 0, 131072, -65535, 0, 131073, -65534, 0, 131073, -65533, 0, 131073, -65532, 0, 131073, -65531, 0, 131073, -65530, 0, 131073, -65529, 0, 131073, -65528, 0, 131073, -65527, 0, 131073, -65526, 0, 131073, -65525, 0, 131073, -65524, 0, 131073, -65523, 0, 131073, -65522, 0, 131073, -65521, 0, 131073, -65520, 0, 131073, -65519, 0, 131074, 196608, 0, 0, 196609, 0, 1, 196610, 0, 1, 196611, 0, 1, 196612, 0, 1, 196613, 0, 1, 196614, 0, 1, 196615, 0, 1, 196616, 0, 1, 196617, 0, 1, 196618, 0, 1, 196619, 0, 2, 196622, 0, 0, 196623, 0, 1, 196624, 0, 1, 196625, 0, 2, 262144, 0, 65536, 262145, 0, 65537, 262146, 0, 65537, 262147, 0, 65537, 262148, 0, 65537, 262149, 0, 65537, 262150, 0, 65537, 262151, 0, 65537, 262152, 0, 65537, 262153, 0, 65537, 262154, 0, 65537, 262155, 0, 65538, 262158, 0, 65536, 262159, 0, 65537, 262160, 0, 65537, 262161, 0, 65538, 327680, 0, 131072, 327681, 0, 131073, 327682, 0, 131073, 327683, 0, 131073, 327684, 0, 131073, 327685, 0, 131073, 327686, 0, 131073, 327687, 0, 131073, 327688, 0, 131073, 327689, 0, 131073, 327690, 0, 131073, 327691, 0, 131074, 327694, 0, 131072, 327695, 0, 131073, 327696, 0, 131073, 327697, 0, 131074 )
 
 [node name="Furniture" type="TileMap" parent="Map_in"]
 format = 1
 
 [node name="YSort" type="YSort" parent="."]
+rotation = 0.00273508
+
+[node name="Crate" parent="YSort" instance=ExtResource( 5 )]
+position = Vector2( 73.0407, 14.8003 )
+
+[node name="OpendBox" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( 95.0243, 8.74014 )
+
+[node name="Crate2" parent="YSort" instance=ExtResource( 5 )]
+position = Vector2( 73.0982, 35.8002 )
+
+[node name="Chair" parent="YSort" instance=ExtResource( 6 )]
+position = Vector2( 105, 41 )
+
+[node name="Desk" parent="YSort" instance=ExtResource( 2 )]
+position = Vector2( 145, 42 )
+
+[node name="Chair2" parent="YSort" instance=ExtResource( 6 )]
+position = Vector2( 185, 43 )
+
+[node name="WoodeanBarrel" parent="YSort" instance=ExtResource( 3 )]
+position = Vector2( 39.2433, 88.893 )
+
+[node name="ClosedBox" parent="YSort" instance=ExtResource( 7 )]
+position = Vector2( 126.024, 8.65535 )
+
+[node name="Barrel" parent="YSort" instance=ExtResource( 4 )]
+position = Vector2( 363.165, 60.0069 )
+
+[node name="EmptyWineBarrel" parent="YSort" instance=ExtResource( 10 )]
+position = Vector2( 188, 15 )
+
+[node name="WoodeanBarrel2" parent="YSort" instance=ExtResource( 3 )]
+position = Vector2( 11.2489, 90.9696 )
+
+[node name="ThatchPile" parent="YSort" instance=ExtResource( 11 )]
+position = Vector2( 317.089, 32.1329 )
+
+[node name="WineBarrel" parent="YSort" instance=ExtResource( 9 )]
+position = Vector2( 267.037, 13.2697 )
+rotation = -0.00273508
+
+[node name="WineBarrel2" parent="YSort" instance=ExtResource( 9 )]
+position = Vector2( 229.037, 13.3736 )
+rotation = -0.00273508
+
+[node name="ThatchGrass5" parent="YSort" instance=ExtResource( 12 )]
+position = Vector2( 17.175, 63.9533 )
+
+[node name="ThatchGrass5" parent="YSort/ThatchGrass5" instance=ExtResource( 12 )]
+position = Vector2( -0.0656128, -23.9999 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="ThatchGrass6" parent="YSort/ThatchGrass5" instance=ExtResource( 12 )]
+position = Vector2( 30.9343, -24.0847 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="ThatchGrass" parent="YSort/ThatchGrass5" instance=ExtResource( 12 )]
+position = Vector2( 30.9999, -0.0847778 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="ThatchGrass2" parent="YSort/ThatchGrass5" instance=ExtResource( 12 )]
+position = Vector2( 14.9371, -23.0409 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="ThatchGrass3" parent="YSort/ThatchGrass5" instance=ExtResource( 12 )]
+position = Vector2( 14.8741, -46.0408 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="ThatchGrass4" parent="YSort/ThatchGrass5" instance=ExtResource( 12 )]
+position = Vector2( 14.9999, -0.0410156 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="ThatchGrass7" parent="YSort/ThatchGrass5" instance=ExtResource( 12 )]
+position = Vector2( -0.125854, -45.9998 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="ThatchGrass8" parent="YSort/ThatchGrass5" instance=ExtResource( 12 )]
+position = Vector2( 30.874, -46.0846 )
+__meta__ = {
+"_edit_lock_": true
+}
