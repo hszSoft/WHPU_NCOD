@@ -1,16 +1,14 @@
-extends KinematicBody2D
+extends Character
 
+onready var softCollision = $SoftCollision
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
+func _process(delta):
+	if direction.x < 0:
+		$AnimatedSprite.scale.x = 1
+	else:
+		$AnimatedSprite.scale.x = -1
 
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+	if softCollision.is_colliding():
+		velocity += softCollision.get_push_vector() * delta * 400
+	
+	velocity = move_and_slide(velocity)

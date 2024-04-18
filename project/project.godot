@@ -74,6 +74,21 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/dialogic/Example Assets/History/HistoryRow.gd"
 }, {
+"base": "Resource",
+"class": "Inv",
+"language": "GDScript",
+"path": "res://txy/inventory/inventory.gd"
+}, {
+"base": "Resource",
+"class": "InvItem",
+"language": "GDScript",
+"path": "res://txy/inventory/inventory_items.gd"
+}, {
+"base": "Resource",
+"class": "InvSlot",
+"language": "GDScript",
+"path": "res://txy/inventory/inventory_collections/Inv_slot.gd"
+}, {
 "base": "Node",
 "class": "StateMachine",
 "language": "GDScript",
@@ -98,6 +113,9 @@ _global_script_class_icons={
 "DialogicUtil": "",
 "EnemyDetection": "",
 "HistoryRow": "",
+"Inv": "",
+"InvItem": "",
+"InvSlot": "",
 "StateMachine": "",
 "StateNode": ""
 }
