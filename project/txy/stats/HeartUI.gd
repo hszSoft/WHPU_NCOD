@@ -1,7 +1,7 @@
 extends Control
 #给他一个setter
-export var hearts = 4 setget set_hearts
-export var max_hearts = 4 setget set_max_hearts
+export var hearts = 3 setget set_hearts
+export var max_hearts = 5 setget set_max_hearts
 
 onready var heartUIFull = $HeartUIFull
 onready var heartUIEmpty = $HeartUIEmpty

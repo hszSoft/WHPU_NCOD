@@ -139,6 +139,7 @@ config/name="NCOD"
 [autoload]
 
 DefaultStateNode="*res://hsz/utils/state_node.gd"
+PlayerStats="*res://txy/stats/PlayerStats.tscn"
 
 [debug]
 

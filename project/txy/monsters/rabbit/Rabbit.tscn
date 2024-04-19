@@ -34,10 +34,10 @@ animations = [ {
 radius = 14.1421
 
 [sub_resource type="CircleShape2D" id=7]
-radius = 112.446
+radius = 166.46
 
 [sub_resource type="CircleShape2D" id=8]
-radius = 58.0345
+radius = 64.1249
 
 [sub_resource type="CircleShape2D" id=9]
 radius = 14.3178
@@ -66,20 +66,17 @@ fear_detection_path = NodePath("../Detection2")
 [node name="Detection" parent="." instance=ExtResource( 4 )]
 
 [node name="CollisionShape2D" parent="Detection" index="0"]
-visible = false
 shape = SubResource( 7 )
 
 [node name="Detection2" parent="." instance=ExtResource( 4 )]
 position = Vector2( -2, 1 )
 
 [node name="CollisionShape2D" parent="Detection2" index="0"]
-visible = false
 shape = SubResource( 8 )
 
 [node name="SoftCollision" parent="." instance=ExtResource( 5 )]
 
 [node name="CollisionShape2D" parent="SoftCollision" index="0"]
-visible = false
 shape = SubResource( 9 )
 
 [editable path="Detection"]
