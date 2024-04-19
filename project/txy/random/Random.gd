@@ -28,7 +28,7 @@ export var sight_radius = 150
 	
 func _ready():
 	timer = Timer.new()
-	timer.wait_time = 2  # 每x秒尝试生成一次
+	timer.wait_time = 0.5  # 每x秒尝试生成一次
 	timer.autostart = true
 	timer.connect("timeout", self, "_on_Timer_timeout")
 	add_child(timer)
@@ -41,16 +41,22 @@ func _on_Timer_timeout():
 func spawn_monster():
 	var can_spawn = false
 	var position = Vector2.ZERO
-
+	var max_attempts = 0
 	while not can_spawn:
+		max_attempts += 1
+		if max_attempts > 20:
+			break
 		position.x = rand_range(spawn_area.position.x, spawn_area.position.x + spawn_area.size.x)
 		position.y = rand_range(spawn_area.position.y, spawn_area.position.y + spawn_area.size.y)
 		if position.distance_to(camera.global_position) > sight_radius:
 			can_spawn = true
-
-	# 随机选择一个怪物预制体
-	var monster_scene = monster_scenes[randi() % monster_scenes.size()]
-	var monster_instance = monster_scene.instance()
-	monster_instance.global_position = position
-	add_child(monster_instance)
-	current_monsters += 1
+			
+	if can_spawn == true:
+		# 随机选择一个怪物预制体
+		var monster_scene = monster_scenes[randi() % monster_scenes.size()]
+		var monster_instance = monster_scene.instance()
+		monster_instance.global_position = position
+		add_child(monster_instance)
+		current_monsters += 1
+		
+	can_spawn = false

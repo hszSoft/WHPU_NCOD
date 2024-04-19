@@ -1,6 +1,6 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=16 format=2]
 
-[ext_resource path="res://txy/monsters/chicken_rabbit_assets/Untitled 04-17-2024 07-27-02.png" type="Texture" id=1]
+[ext_resource path="res://txy/monsters/chicken_rabbit_assets/cock.png" type="Texture" id=1]
 [ext_resource path="res://hsz/utils/detection/detection.tscn" type="PackedScene" id=2]
 [ext_resource path="res://hsz/ai/avoidance/avoidance.tscn" type="PackedScene" id=3]
 [ext_resource path="res://txy/monsters/hen/Hen.gd" type="Script" id=4]
@@ -36,20 +36,71 @@ radius = 13.0384
 [sub_resource type="CircleShape2D" id=7]
 radius = 11.0454
 
+[sub_resource type="Animation" id=10]
+resource_name = "Idle"
+length = 0.3
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ 1, 2, 3 ]
+}
+
+[sub_resource type="Animation" id=8]
+resource_name = "Move"
+length = 0.7
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4, 5, 0 ]
+}
+
+[sub_resource type="Animation" id=9]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+
 [node name="Hen" type="KinematicBody2D"]
 script = ExtResource( 4 )
 acceleration = 1800.0
 max_speed = 100.0
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+visible = false
 frames = SubResource( 5 )
 animation = "wander"
-frame = 3
 playing = true
 offset = Vector2( 0, -14 )
 
 [node name="Sprite" type="Sprite" parent="."]
-visible = false
+texture = ExtResource( 1 )
+offset = Vector2( 0, -13 )
+hframes = 6
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
@@ -68,5 +119,11 @@ visible = false
 [node name="CollisionShape2D" parent="SoftCollision" index="0"]
 position = Vector2( -2, -8 )
 shape = SubResource( 7 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../Sprite")
+anims/Idle = SubResource( 10 )
+anims/Move = SubResource( 8 )
+anims/RESET = SubResource( 9 )
 
 [editable path="SoftCollision"]
