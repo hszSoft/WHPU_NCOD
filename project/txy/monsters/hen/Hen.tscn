@@ -44,13 +44,15 @@ max_speed = 100.0
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 5 )
 animation = "wander"
-frame = 1
+frame = 3
 playing = true
 offset = Vector2( 0, -14 )
 
 [node name="Sprite" type="Sprite" parent="."]
+visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2( 0, -13 )
 shape = SubResource( 6 )
 
@@ -58,8 +60,10 @@ shape = SubResource( 6 )
 detection_path = NodePath("../Detection")
 
 [node name="Detection" parent="." instance=ExtResource( 2 )]
+visible = false
 
 [node name="SoftCollision" parent="." instance=ExtResource( 5 )]
+visible = false
 
 [node name="CollisionShape2D" parent="SoftCollision" index="0"]
 position = Vector2( -2, -8 )

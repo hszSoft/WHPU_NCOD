@@ -20,23 +20,19 @@ tile_data = PoolIntArray( -589840, 1, 262148, -589839, 1, 262149, -589838, 1, 26
 [node name="Camera2D" type="Camera2D" parent="Daogu"]
 current = true
 
-[node name="Hen" parent="." instance=ExtResource( 4 )]
-visible = false
-
-[node name="Killer_Rabbit" parent="." instance=ExtResource( 6 )]
-visible = false
-
-[node name="Rabbit" parent="." instance=ExtResource( 5 )]
-visible = false
-position = Vector2( -274, 110 )
-
 [node name="YSort" type="YSort" parent="."]
 
 [node name="Cock" parent="YSort" instance=ExtResource( 2 )]
-max_speed = 50.0
 
 [node name="Cock3" parent="YSort" instance=ExtResource( 2 )]
 
 [node name="Cock4" parent="YSort" instance=ExtResource( 2 )]
 
-[node name="Cock2" parent="YSort" instance=ExtResource( 2 )]
+[node name="Killer_Rabbit" parent="YSort" instance=ExtResource( 6 )]
+
+[node name="Rabbit" parent="YSort" instance=ExtResource( 5 )]
+position = Vector2( -274, 110 )
+
+[node name="Killer_Rabbit2" parent="YSort" instance=ExtResource( 6 )]
+
+[node name="Hen" parent="YSort" instance=ExtResource( 4 )]

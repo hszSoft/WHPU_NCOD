@@ -6,28 +6,28 @@
 [ext_resource path="res://hsz/ai/aggressive/aggressive.tscn" type="PackedScene" id=4]
 [ext_resource path="res://txy/softCollision/SoftCollision.tscn" type="PackedScene" id=5]
 
-[sub_resource type="AtlasTexture" id=1]
+[sub_resource type="AtlasTexture" id=10]
 atlas = ExtResource( 2 )
-region = Rect2( 0, 0, 32, 32 )
+region = Rect2( 128, 0, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=2]
+[sub_resource type="AtlasTexture" id=11]
 atlas = ExtResource( 2 )
-region = Rect2( 32, 0, 32, 32 )
+region = Rect2( 160, 0, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=3]
+[sub_resource type="AtlasTexture" id=12]
 atlas = ExtResource( 2 )
-region = Rect2( 64, 0, 32, 32 )
+region = Rect2( 192, 0, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=4]
+[sub_resource type="AtlasTexture" id=13]
 atlas = ExtResource( 2 )
-region = Rect2( 96, 0, 32, 32 )
+region = Rect2( 224, 0, 32, 32 )
 
 [sub_resource type="SpriteFrames" id=5]
 animations = [ {
-"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ) ],
+"frames": [ SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ) ],
 "loop": true,
 "name": "default",
-"speed": 5.0
+"speed": 8.0
 } ]
 
 [sub_resource type="CircleShape2D" id=6]
@@ -39,18 +39,21 @@ radius = 14.0357
 [node name="Killer_Rabbit" type="KinematicBody2D"]
 script = ExtResource( 1 )
 acceleration = 1800.0
-max_speed = 100.0
+max_speed = 50.0
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 5 )
+frame = 1
 playing = true
 offset = Vector2( 0, -10 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2( 0, -9 )
 shape = SubResource( 6 )
 
 [node name="SoftCollision" parent="." instance=ExtResource( 5 )]
+visible = false
 
 [node name="CollisionShape2D" parent="SoftCollision" index="0"]
 position = Vector2( 0, -1 )
@@ -60,5 +63,6 @@ shape = SubResource( 9 )
 detection_path = NodePath("../Detection")
 
 [node name="Detection" parent="." instance=ExtResource( 3 )]
+visible = false
 
 [editable path="SoftCollision"]
