@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=2]
+[gd_scene load_steps=30 format=2]
 
 [ext_resource path="res://hsz/tileset/grassland.tres" type="TileSet" id=1]
 [ext_resource path="res://hsz/tileset/decorations.tres" type="TileSet" id=2]
@@ -28,6 +28,7 @@
 [ext_resource path="res://hsz/spritesheet/woods.tscn" type="PackedScene" id=26]
 [ext_resource path="res://hsz/spritesheet/house1.tscn" type="PackedScene" id=27]
 [ext_resource path="res://hsz/spritesheet/shrub1.tscn" type="PackedScene" id=28]
+[ext_resource path="res://twz/npc/Npc.tscn" type="PackedScene" id=29]
 
 [node name="TestLevel" type="Node2D"]
 __meta__ = {
@@ -1549,6 +1550,9 @@ position = Vector2( 2263, 1352 )
 
 [node name="Wood116" parent="Map/YSort" instance=ExtResource( 25 )]
 position = Vector2( 2346, 1276 )
+
+[node name="Npc" parent="Map/YSort" instance=ExtResource( 29 )]
+position = Vector2( -194, -54 )
 
 [node name="Daogu" parent="Map/YSort" instance=ExtResource( 11 )]
 position = Vector2( -9.99998, -28 )
