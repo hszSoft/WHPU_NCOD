@@ -13,3 +13,6 @@ func _process(delta):
 		$AnimationPlayer.play("Idle")
 	else:
 		$AnimationPlayer.play("Move")
+
+func _on_CrowTimer_timeout():
+	$Env.play()

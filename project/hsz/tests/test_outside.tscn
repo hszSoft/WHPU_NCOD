@@ -1578,13 +1578,13 @@ zoom = Vector2( 0.8, 0.8 )
 position = Vector2( 401, -55 )
 
 [node name="Cock" parent="Map/YSort/Monsters" instance=ExtResource( 4 )]
-position = Vector2( 1079, 573 )
+position = Vector2( -36.9999, 258 )
 
 [node name="KillerRabbit" parent="Map/YSort/Monsters" instance=ExtResource( 23 )]
 position = Vector2( 306, 666 )
 
 [node name="Rabbit" parent="Map/YSort/Monsters" instance=ExtResource( 22 )]
-position = Vector2( 1454, 373 )
+position = Vector2( 1085, 117 )
 
 [node name="Hide" type="YSort" parent="Map/YSort"]
 
