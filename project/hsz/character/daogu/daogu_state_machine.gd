@@ -1,9 +1,11 @@
 extends StateMachine
 
+var is_moving: bool = false
+
 func _on_Idle_transition(state):
-	if params["is_moving"] == true:
+	if is_moving:
 		transition_to("Move")
 	
 func _on_Move_transition(state):
-	if params["is_moving"] == false:
+	if not is_moving:
 		transition_to("Idle")

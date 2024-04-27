@@ -1,7 +1,9 @@
 extends StateNode
 
-onready var daogu = owner as Character
-onready var animation_player = owner.get_node("AnimationPlayer") as AnimationPlayer
+var animation_player: AnimationPlayer = null
+
+func after_ready():
+	animation_player = character.get_node("AnimationPlayer")
 
 func select_animation(direction: Vector2) -> String:
 	if abs(direction.x) >= abs(direction.y):
@@ -16,4 +18,4 @@ func select_animation(direction: Vector2) -> String:
 			return "IdleUp"
 
 func enter():
-	animation_player.play(select_animation(daogu.direction))
+	animation_player.play(select_animation(character.animation_direction))

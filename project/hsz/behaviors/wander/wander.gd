@@ -1,21 +1,13 @@
 extends StateNode
 
-var character: Character = null
-onready var timer := $Timer
-
-var direction : Vector2
-var has_stopped : bool
+onready var timer := $RandomTimer
+var direction: Vector2
+var finished: bool = false
 
 func enter():
-	has_stopped = false
-	timer.start(rand_range(1.0, 2.0))
-	direction.x = rand_range(-10, 10)
-	direction.y = rand_range(-10, 10)
-	direction = direction.normalized()
-	
-func physics_update(delta: float):
-	if not has_stopped:
-		character.move(direction, delta)
+	finished = false
+	timer.random_start()
+	character.direction = Vector2(rand_range(-1, 1), rand_range(-1, 1)).normalized()
 
-func _on_Timer_timeout():
-	has_stopped = true
+func _on_RandomTimer_timeout():
+	finished = true

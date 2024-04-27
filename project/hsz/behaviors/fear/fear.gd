@@ -1,10 +1,12 @@
 extends StateNode
 
-var character: Character = null
-var detection: EnemyDetection = null
+var detection: Detection = null
+
+func after_ready():
+	detection = character.get_node("FearDetection")
 
 func physics_update(delta):
-	if not detection.can_seek_player():
-		return
-	var direction = (character.global_position - detection.player.global_position).normalized()
-	character.move(direction, delta)
+	if not detection.can_seek_target():
+		character.direction = Vector2.ZERO
+	else:
+		character.direction = (character.global_position - detection.target.global_position).normalized()

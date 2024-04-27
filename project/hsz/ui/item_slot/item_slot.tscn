@@ -1,0 +1,59 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://hsz/ui/themes/default_theme.tres" type="Theme" id=1]
+[ext_resource path="res://hsz/ui/item_slot/item_slot.png" type="Texture" id=2]
+[ext_resource path="res://hsz/ui/item_slot/item_slot.gd" type="Script" id=3]
+
+[node name="Root" type="Control"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -20.0
+margin_top = -20.0
+margin_right = 20.0
+margin_bottom = 20.0
+rect_min_size = Vector2( 40, 40 )
+script = ExtResource( 3 )
+
+[node name="Slot" type="NinePatchRect" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -20.0
+margin_top = -20.0
+margin_right = 20.0
+margin_bottom = 20.0
+rect_min_size = Vector2( 40, 40 )
+texture = ExtResource( 2 )
+patch_margin_left = 1
+patch_margin_top = 1
+patch_margin_right = 1
+patch_margin_bottom = 1
+
+[node name="Icon" type="TextureRect" parent="Slot"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -20.0
+margin_top = -20.0
+margin_right = 20.0
+margin_bottom = 20.0
+stretch_mode = 1
+
+[node name="Quantity" type="Label" parent="Slot"]
+anchor_left = 0.92
+anchor_top = 0.6
+anchor_right = 0.92
+anchor_bottom = 0.6
+grow_horizontal = 0
+theme = ExtResource( 1 )
+align = 2
+
+[node name="Select" type="ColorRect" parent="Slot"]
+visible = false
+margin_right = 40.0
+margin_bottom = 40.0
+color = Color( 1, 1, 1, 0.352941 )

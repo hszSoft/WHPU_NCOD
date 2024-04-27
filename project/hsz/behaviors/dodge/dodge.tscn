@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://hsz/behaviors/dodge/dodge.gd" type="Script" id=1]
+[ext_resource path="res://hsz/utils/random_timer.gd" type="Script" id=2]
+
+[node name="Dodge" type="Node"]
+script = ExtResource( 1 )
+
+[node name="RandomTimer" type="Timer" parent="."]
+one_shot = true
+script = ExtResource( 2 )
+interval_base = 0.4
+
+[connection signal="timeout" from="RandomTimer" to="." method="_on_RandomTimer_timeout"]

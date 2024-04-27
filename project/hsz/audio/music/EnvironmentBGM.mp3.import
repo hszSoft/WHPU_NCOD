@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/EnvironmentBGM.mp3-6a2b0fb1e48620f525613ee4c8279530.mp3str"
+
+[deps]
+
+source_file="res://hsz/audio/music/EnvironmentBGM.mp3"
+dest_files=[ "res://.import/EnvironmentBGM.mp3-6a2b0fb1e48620f525613ee4c8279530.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

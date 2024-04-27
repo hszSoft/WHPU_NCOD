@@ -1,0 +1,31 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://hsz/ai/aggressive_with_dodge/aggressive_with_dodge.gd" type="Script" id=1]
+[ext_resource path="res://hsz/behaviors/wander/wander.tscn" type="PackedScene" id=2]
+[ext_resource path="res://hsz/behaviors/chase/chase.tscn" type="PackedScene" id=3]
+[ext_resource path="res://hsz/behaviors/idle/idle.tscn" type="PackedScene" id=4]
+[ext_resource path="res://hsz/behaviors/dodge/dodge.tscn" type="PackedScene" id=5]
+[ext_resource path="res://hsz/utils/random_timer.gd" type="Script" id=6]
+
+[node name="AggressiveWithDodge" type="Node"]
+script = ExtResource( 1 )
+default_state_path = NodePath("Idle")
+
+[node name="Idle" parent="." instance=ExtResource( 4 )]
+
+[node name="IdleTimer" type="Timer" parent="Idle"]
+script = ExtResource( 6 )
+
+[node name="Wander" parent="." instance=ExtResource( 2 )]
+
+[node name="Chase" parent="." instance=ExtResource( 3 )]
+
+[node name="ChaseTimer" type="Timer" parent="Chase"]
+script = ExtResource( 6 )
+interval_base = 0.5
+interval_offset = 0.3
+
+[node name="Dodge" parent="." instance=ExtResource( 5 )]
+
+[connection signal="timeout" from="Idle/IdleTimer" to="." method="_on_IdleTimer_timeout"]
+[connection signal="timeout" from="Chase/ChaseTimer" to="." method="_on_ChaseTimer_timeout"]

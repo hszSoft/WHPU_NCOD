@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://hsz/debug/state_viewer/state_viewer.gd" type="Script" id=1]
+[ext_resource path="res://hsz/ui/themes/default_theme.tres" type="Theme" id=2]
+
+[node name="StateViewer" type="Node2D"]
+position = Vector2( -20, -40 )
+script = ExtResource( 1 )
+
+[node name="Label" type="Label" parent="."]
+margin_right = 40.0
+margin_bottom = 14.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource( 2 )
+text = "<NULL>"
+align = 1

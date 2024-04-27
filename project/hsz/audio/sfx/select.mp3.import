@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/select.mp3-4efe2586703c06fa9e2c86f5c7ed71b5.mp3str"
+
+[deps]
+
+source_file="res://hsz/audio/sfx/select.mp3"
+dest_files=[ "res://.import/select.mp3-4efe2586703c06fa9e2c86f5c7ed71b5.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

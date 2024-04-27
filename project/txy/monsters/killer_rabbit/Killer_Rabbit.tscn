@@ -1,9 +1,7 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://txy/monsters/killer_rabbit/Killer_Rabbit.gd" type="Script" id=1]
 [ext_resource path="res://txy/monsters/chicken_rabbit_assets/rabbit.png" type="Texture" id=2]
-[ext_resource path="res://hsz/utils/detection/detection.tscn" type="PackedScene" id=3]
-[ext_resource path="res://hsz/ai/aggressive/aggressive.tscn" type="PackedScene" id=4]
 [ext_resource path="res://txy/softCollision/SoftCollision.tscn" type="PackedScene" id=5]
 
 [sub_resource type="AtlasTexture" id=10]
@@ -125,7 +123,7 @@ frame = 4
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 visible = false
 frames = SubResource( 5 )
-frame = 2
+frame = 3
 playing = true
 offset = Vector2( 0, -10 )
 
@@ -140,12 +138,6 @@ visible = false
 [node name="CollisionShape2D" parent="SoftCollision" index="0"]
 position = Vector2( 0, -1 )
 shape = SubResource( 9 )
-
-[node name="AggressiveAI" parent="." instance=ExtResource( 4 )]
-detection_path = NodePath("../Detection")
-
-[node name="Detection" parent="." instance=ExtResource( 3 )]
-visible = false
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("../Sprite")

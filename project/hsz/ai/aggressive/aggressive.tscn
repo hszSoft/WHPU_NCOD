@@ -1,20 +1,27 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://hsz/behaviors/chase/chase.tscn" type="PackedScene" id=1]
 [ext_resource path="res://hsz/behaviors/idle/idle.tscn" type="PackedScene" id=2]
 [ext_resource path="res://hsz/behaviors/wander/wander.tscn" type="PackedScene" id=3]
 [ext_resource path="res://hsz/ai/aggressive/aggressive.gd" type="Script" id=4]
+[ext_resource path="res://hsz/utils/random_timer.gd" type="Script" id=5]
+[ext_resource path="res://hsz/behaviors/charm/charm.tscn" type="PackedScene" id=6]
 
 [node name="AggressiveAI" type="Node"]
 script = ExtResource( 4 )
-default_state = NodePath("Idle")
+default_state_path = NodePath("Idle")
 
 [node name="Idle" parent="." instance=ExtResource( 2 )]
 
-[node name="Timer" type="Timer" parent="Idle"]
+[node name="RandomTimer" type="Timer" parent="Idle"]
+script = ExtResource( 5 )
+interval_base = 2.0
+interval_offset = 0.5
 
 [node name="Wander" parent="." instance=ExtResource( 3 )]
 
 [node name="Chase" parent="." instance=ExtResource( 1 )]
 
-[connection signal="timeout" from="Idle/Timer" to="." method="_on_Timer_timeout"]
+[node name="Charm" parent="." instance=ExtResource( 6 )]
+
+[connection signal="timeout" from="Idle/RandomTimer" to="." method="_on_RandomTimer_timeout"]

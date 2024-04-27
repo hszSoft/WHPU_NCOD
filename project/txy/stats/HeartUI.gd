@@ -1,7 +1,10 @@
 extends Control
-#给他一个setter
+
 export var hearts = 3 setget set_hearts
 export var max_hearts = 5 setget set_max_hearts
+
+export var player_stats_path: NodePath
+onready var player_stats := get_node(player_stats_path) as Stats
 
 onready var heartUIFull = $HeartUIFull
 onready var heartUIEmpty = $HeartUIEmpty
@@ -20,7 +23,7 @@ func set_max_hearts(value):
 
 func _ready():
 	#设置玩家生命值
-	self.max_hearts = PlayerStats.max_health
-	self.hearts = PlayerStats.health
-	PlayerStats.connect("health_changed", self, "set_hearts")
-	PlayerStats.connect("max_health_changed", self, "set_max_hearts")
+	self.max_hearts = player_stats.max_health
+	self.hearts = player_stats.health
+	player_stats.connect("health_changed", self, "set_hearts")
+	player_stats.connect("max_health_changed", self, "set_max_hearts")

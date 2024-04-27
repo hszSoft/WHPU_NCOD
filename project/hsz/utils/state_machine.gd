@@ -1,18 +1,18 @@
-class_name StateMachine
 extends Node
+class_name StateMachine
 
-export(NodePath) var default_state
-export(Dictionary) var params
-
-var current_state : StateNode = DefaultStateNode
+export var default_state_path: NodePath
+onready var current_state: StateNode = DefaultStateNode setget set_current_state
 
 signal transitioned(state_name)
 
 func _ready():
 	yield(owner, "ready")
-	if not default_state.is_empty():
-		current_state = get_node(default_state)
-	current_state.enter()
+	for child in get_children():
+		child.character = owner
+		child.after_ready()
+	if not default_state_path.is_empty():
+		set_current_state(get_node(default_state_path))
 
 func _unhandled_input(event: InputEvent):
 	current_state.handle_input(event)
@@ -28,20 +28,13 @@ func _process(delta: float):
 func _physics_process(delta):
 	current_state.physics_update(delta)
 	
-func set_param(name: String, value):
-	params[name] = value
-	
-func get_param(name: String):
-	return params[name]
-	
-func get_current_state():
-	return current_state.name
-
-func transition_to(state_node_name: String):
-	if not has_node(state_node_name):
-		return
-	var state = get_node(state_node_name)
+func set_current_state(state: StateNode):
 	current_state.leave()
-	state.enter()
 	current_state = state
-	emit_signal("transitioned", state.name)
+	current_state.enter()
+	emit_signal("transitioned", current_state.name)
+
+func transition_to(state_name: String):
+	if not has_node(state_name):
+		return
+	set_current_state(get_node(state_name))

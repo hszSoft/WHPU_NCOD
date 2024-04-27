@@ -19,6 +19,16 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/dialogic/Localization/translation_service.gd"
 }, {
+"base": "Area2D",
+"class": "Detection",
+"language": "GDScript",
+"path": "res://hsz/utils/detection.gd"
+}, {
+"base": "Area2D",
+"class": "DetectionBox",
+"language": "GDScript",
+"path": "res://hsz/utils/detection_box.gd"
+}, {
 "base": "Node",
 "class": "Dialogic",
 "language": "GDScript",
@@ -64,25 +74,45 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/dialogic/Other/DialogicUtil.gd"
 }, {
-"base": "Area2D",
-"class": "EnemyDetection",
+"base": "Character",
+"class": "Enemy",
 "language": "GDScript",
-"path": "res://hsz/utils/detection/detection.gd"
+"path": "res://hsz/monsters/enemy.gd"
 }, {
 "base": "PanelContainer",
 "class": "HistoryRow",
 "language": "GDScript",
 "path": "res://addons/dialogic/Example Assets/History/HistoryRow.gd"
 }, {
-"base": "Area2D",
+"base": "DetectionBox",
 "class": "Hitbox",
 "language": "GDScript",
 "path": "res://hsz/utils/hitbox.gd"
 }, {
-"base": "Area2D",
+"base": "DetectionBox",
 "class": "Hurtbox",
 "language": "GDScript",
 "path": "res://hsz/utils/hurtbox.gd"
+}, {
+"base": "Control",
+"class": "ItemSlot",
+"language": "GDScript",
+"path": "res://hsz/ui/item_slot/item_slot.gd"
+}, {
+"base": "Button",
+"class": "NormalButton",
+"language": "GDScript",
+"path": "res://hsz/utils/normal_button.gd"
+}, {
+"base": "Node",
+"class": "PlayerItems",
+"language": "GDScript",
+"path": "res://hsz/items/player_items.gd"
+}, {
+"base": "Timer",
+"class": "RandomTimer",
+"language": "GDScript",
+"path": "res://hsz/utils/random_timer.gd"
 }, {
 "base": "Node",
 "class": "StateMachine",
@@ -93,10 +123,17 @@ _global_script_classes=[ {
 "class": "StateNode",
 "language": "GDScript",
 "path": "res://hsz/utils/state_node.gd"
+}, {
+"base": "Node",
+"class": "Stats",
+"language": "GDScript",
+"path": "res://txy/stats/Stats.gd"
 } ]
 _global_script_class_icons={
 "Character": "",
 "DTS": "",
+"Detection": "",
+"DetectionBox": "",
 "Dialogic": "",
 "DialogicAnimaPropertiesHelper": "",
 "DialogicAnimaResources": "",
@@ -106,12 +143,17 @@ _global_script_class_icons={
 "DialogicParser": "",
 "DialogicResources": "",
 "DialogicUtil": "",
-"EnemyDetection": "",
+"Enemy": "",
 "HistoryRow": "",
 "Hitbox": "",
 "Hurtbox": "",
+"ItemSlot": "",
+"NormalButton": "",
+"PlayerItems": "",
+"RandomTimer": "",
 "StateMachine": "",
-"StateNode": ""
+"StateNode": "",
+"Stats": ""
 }
 
 [application]
@@ -121,7 +163,7 @@ config/name="NCOD"
 [autoload]
 
 DefaultStateNode="*res://hsz/utils/state_node.gd"
-PlayerStats="*res://txy/stats/PlayerStats.tscn"
+ItemsDatabase="*res://hsz/items/database.gd"
 
 [debug]
 
@@ -129,7 +171,7 @@ settings/physics_interpolation/enable_warnings=false
 
 [display]
 
-window/size/width=1080
+window/size/width=1280
 window/size/height=720
 window/stretch/mode="viewport"
 window/stretch/aspect="keep"
@@ -205,12 +247,53 @@ move_down={
 , Object(InputEventJoypadMotion,"resource_local_to_scene":false,"resource_name":"","device":0,"axis":1,"axis_value":1.0,"script":null)
  ]
 }
+last_item={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":81,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+, Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":0,"button_index":4,"pressure":0.0,"pressed":false,"script":null)
+ ]
+}
+next_item={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":69,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+, Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":0,"button_index":5,"pressure":0.0,"pressed":false,"script":null)
+ ]
+}
+aim_left={
+"deadzone": 0.5,
+"events": [ Object(InputEventJoypadMotion,"resource_local_to_scene":false,"resource_name":"","device":0,"axis":2,"axis_value":-1.0,"script":null)
+ ]
+}
+aim_right={
+"deadzone": 0.5,
+"events": [ Object(InputEventJoypadMotion,"resource_local_to_scene":false,"resource_name":"","device":0,"axis":2,"axis_value":1.0,"script":null)
+ ]
+}
+aim_up={
+"deadzone": 0.5,
+"events": [ Object(InputEventJoypadMotion,"resource_local_to_scene":false,"resource_name":"","device":0,"axis":3,"axis_value":-1.0,"script":null)
+ ]
+}
+aim_down={
+"deadzone": 0.5,
+"events": [ Object(InputEventJoypadMotion,"resource_local_to_scene":false,"resource_name":"","device":0,"axis":3,"axis_value":1.0,"script":null)
+ ]
+}
+use_item={
+"deadzone": 0.5,
+"events": [ Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"button_mask":0,"position":Vector2( 0, 0 ),"global_position":Vector2( 0, 0 ),"factor":1.0,"button_index":1,"pressed":false,"doubleclick":false,"script":null)
+, Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":0,"button_index":0,"pressure":0.0,"pressed":false,"script":null)
+, Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":0,"button_index":6,"pressure":0.0,"pressed":false,"script":null)
+, Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":0,"button_index":7,"pressure":0.0,"pressed":false,"script":null)
+ ]
+}
 
 [layer_names]
 
 2d_physics/layer_1="Map"
 2d_physics/layer_2="Player"
 2d_physics/layer_3="Enemy"
+2d_physics/layer_4="Millet"
 
 [physics]
 

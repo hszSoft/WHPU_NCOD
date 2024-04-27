@@ -1,9 +1,7 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://txy/monsters/cock/Cock.gd" type="Script" id=1]
 [ext_resource path="res://txy/monsters/chicken_rabbit_assets/cock.png" type="Texture" id=2]
-[ext_resource path="res://hsz/ai/aggressive/aggressive.tscn" type="PackedScene" id=3]
-[ext_resource path="res://hsz/utils/detection/detection.tscn" type="PackedScene" id=4]
 [ext_resource path="res://txy/softCollision/SoftCollision.tscn" type="PackedScene" id=5]
 
 [sub_resource type="CircleShape2D" id=6]
@@ -75,12 +73,6 @@ hframes = 6
 position = Vector2( -2, -12 )
 shape = SubResource( 6 )
 
-[node name="AggressiveAI" parent="." instance=ExtResource( 3 )]
-detection_path = NodePath("../Detection")
-
-[node name="Detection" parent="." instance=ExtResource( 4 )]
-visible = false
-
 [node name="SoftCollision" parent="." instance=ExtResource( 5 )]
 
 [node name="CollisionShape2D" parent="SoftCollision" index="0"]
@@ -92,5 +84,4 @@ anims/Idle = SubResource( 15 )
 anims/Move = SubResource( 16 )
 anims/RESET = SubResource( 17 )
 
-[editable path="AggressiveAI"]
 [editable path="SoftCollision"]

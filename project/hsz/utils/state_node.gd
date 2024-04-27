@@ -1,7 +1,11 @@
-class_name StateNode
 extends Node
+class_name StateNode
 
 var enable_transition: bool = true
+var character: Node = null
+
+func after_ready():
+	pass
 
 func enter():
 	pass

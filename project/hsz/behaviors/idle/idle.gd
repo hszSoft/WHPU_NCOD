@@ -1,4 +1,4 @@
 extends StateNode
 
 func enter():
-	pass
+	character.direction = Vector2.ZERO

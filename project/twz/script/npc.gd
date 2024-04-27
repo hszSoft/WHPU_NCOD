@@ -9,9 +9,6 @@ var index = 0                      #下标索引
 func _ready():
 	connect("body_entered",self,'_on_body_entered')
 	connect("body_exited",self,'_on_body_exited')
-	
-
-
 
 func _on_Npc_body_entered(body):
 	if body.name == 'Daogu':

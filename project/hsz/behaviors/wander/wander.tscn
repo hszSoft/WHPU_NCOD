@@ -1,10 +1,15 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://hsz/behaviors/wander/wander.gd" type="Script" id=1]
+[ext_resource path="res://hsz/utils/random_timer.gd" type="Script" id=2]
 
 [node name="Wander" type="Node"]
 script = ExtResource( 1 )
 
-[node name="Timer" type="Timer" parent="."]
+[node name="RandomTimer" type="Timer" parent="."]
+one_shot = true
+script = ExtResource( 2 )
+interval_base = 1.2
+interval_offset = 0.5
 
-[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="timeout" from="RandomTimer" to="." method="_on_RandomTimer_timeout"]

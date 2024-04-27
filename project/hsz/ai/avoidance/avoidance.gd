@@ -1,44 +1,50 @@
 extends StateMachine
 
-export var idle_interval_min: float = 1.0
-export var idle_interval_max: float = 3.0
-export(float, 0.0, 100.0) var idle_transition_probability = 20.0
-onready var idle_timer = $Idle/Timer
-var idle_can_transition: bool = false
+onready var idle_timer := $Idle/RandomTimer
+export var idle_transition_probability: float = 30.0
+var idle_to_wander: bool = false
 
-export var detection_path: NodePath
-onready var detection = get_node(detection_path) as EnemyDetection
+export var fear_radius_after_charm: float = 96
+export var original_fear_radius: float = 192
 
-func start_idle():
-	var interval = rand_range(idle_interval_min, idle_interval_max)
-	idle_timer.start(interval)
+func should_fear():
+	return $Fear.detection.can_seek_target()
+
+func should_charm():
+	return $Charm.detection.can_seek_target()
+
+func transition_to_fc():
+	if should_fear():
+		transition_to("Fear")
+	elif should_charm():
+		transition_to("Charm")
 
 func _ready():
-	start_idle()
-	$Fear.detection = detection
-	$Fear.character = owner
-	$Wander.character = owner
+	idle_timer.random_start()
+
+func _on_RandomTimer_timeout():
+	if rand_range(0, 100) < idle_transition_probability:
+		idle_to_wander = true
 
 func _on_Idle_transition(state: StateNode):
-	if idle_can_transition:
+	if idle_to_wander:
+		idle_timer.stop()
+		idle_to_wander = false
 		transition_to("Wander")
-		idle_can_transition = false
-	if detection.can_seek_player():
-		transition_to("Fear")
-	
+	transition_to_fc()
+
 func _on_Wander_transition(state: StateNode):
-	if state.has_stopped:
+	if $Wander.finished:
+		idle_timer.random_start()
 		transition_to("Idle")
-	if detection.can_seek_player():
-		transition_to("Fear")
+	transition_to_fc()
 
 func _on_Fear_transition(state: StateNode):
-	if not detection.can_seek_player():
+	if not should_fear():
 		transition_to("Wander")
 
-func _on_Timer_timeout():
-	var random_number = rand_range(0.0, 100.0)
-	if random_number < idle_transition_probability:
-		idle_can_transition = true
-	else:
-		start_idle()
+func _on_Charm_transition(state: StateNode):
+	if should_fear():
+		transition_to("Fear")
+	if not should_charm():
+		transition_to("Wander")
