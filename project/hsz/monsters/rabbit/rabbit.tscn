@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://hsz/monsters/enemy.tscn" type="PackedScene" id=1]
 [ext_resource path="res://hsz/monsters/rabbit/rabbit.gd" type="Script" id=2]
@@ -7,6 +7,8 @@
 [ext_resource path="res://hsz/utils/detection.gd" type="Script" id=5]
 [ext_resource path="res://hsz/utils/hitbox.gd" type="Script" id=6]
 [ext_resource path="res://hsz/debug/state_viewer/state_viewer.tscn" type="PackedScene" id=7]
+[ext_resource path="res://hsz/utils/random_timer.gd" type="Script" id=8]
+[ext_resource path="res://hsz/audio/sfx/rabbit_env.wav" type="AudioStream" id=9]
 
 [sub_resource type="CircleShape2D" id=3]
 
@@ -155,3 +157,14 @@ shape = SubResource( 8 )
 
 [node name="StateViewer" parent="." index="12" instance=ExtResource( 7 )]
 state_machine_path = NodePath("../ProvokingAI")
+
+[node name="CrowTimer" type="Timer" parent="." index="14"]
+autostart = true
+script = ExtResource( 8 )
+interval_base = 30.0
+interval_offset = 10.0
+
+[node name="Env" type="AudioStreamPlayer2D" parent="." index="15"]
+stream = ExtResource( 9 )
+
+[connection signal="timeout" from="CrowTimer" to="." method="_on_CrowTimer_timeout"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://hsz/character/daogu/state/idle.gd" type="Script" id=1]
 [ext_resource path="res://hsz/character/daogu/daogu.png" type="Texture" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://txy/stats/Stats.gd" type="Script" id=9]
 [ext_resource path="res://hsz/debug/state_viewer/state_viewer.tscn" type="PackedScene" id=10]
 [ext_resource path="res://hsz/audio/sfx/hurt.wav" type="AudioStream" id=11]
+[ext_resource path="res://hsz/audio/sfx/walk.wav" type="AudioStream" id=12]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 5, 1.5 )
@@ -100,6 +101,23 @@ tracks/0/keys = {
 "update": 1,
 "values": [ 25, 26, 27, 24 ]
 }
+tracks/1/type = "method"
+tracks/1/path = NodePath("Walk")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.36 ),
+"transitions": PoolRealArray( 1, 1 ),
+"values": [ {
+"args": [ 0.0 ],
+"method": "play"
+}, {
+"args": [ 0.0 ],
+"method": "play"
+} ]
+}
 
 [sub_resource type="Animation" id=7]
 resource_name = "MoveLeft"
@@ -117,6 +135,23 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 1,
 "values": [ 4, 5, 6, 3 ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath("Walk")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.36 ),
+"transitions": PoolRealArray( 1, 1 ),
+"values": [ {
+"args": [ 0.0 ],
+"method": "play"
+}, {
+"args": [ 0.0 ],
+"method": "play"
+} ]
 }
 
 [sub_resource type="Animation" id=8]
@@ -136,6 +171,23 @@ tracks/0/keys = {
 "update": 1,
 "values": [ 11, 12, 13, 10 ]
 }
+tracks/1/type = "method"
+tracks/1/path = NodePath("Walk")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.36 ),
+"transitions": PoolRealArray( 1, 1 ),
+"values": [ {
+"args": [ 0.0 ],
+"method": "play"
+}, {
+"args": [ 0.0 ],
+"method": "play"
+} ]
+}
 
 [sub_resource type="Animation" id=9]
 resource_name = "MoveUp"
@@ -153,6 +205,23 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 1,
 "values": [ 15, 16, 17, 14 ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath("Walk")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.36 ),
+"transitions": PoolRealArray( 1, 1 ),
+"values": [ {
+"args": [ 0.0 ],
+"method": "play"
+}, {
+"args": [ 0.0 ],
+"method": "play"
+} ]
 }
 
 [sub_resource type="Animation" id=10]
@@ -241,6 +310,10 @@ state_machine_path = NodePath("../StateMachine")
 
 [node name="Hurt" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 11 )
+
+[node name="Walk" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 12 )
+volume_db = -20.0
 
 [connection signal="hurt" from="Hurtbox" to="." method="_on_Hurtbox_hurt"]
 [connection signal="timeout" from="FlickerTimer" to="." method="_on_FlickerTimer_timeout"]
