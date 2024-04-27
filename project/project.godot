@@ -84,21 +84,6 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://hsz/utils/hurtbox.gd"
 }, {
-"base": "Resource",
-"class": "Inv",
-"language": "GDScript",
-"path": "res://txy/inventory/inventory.gd"
-}, {
-"base": "Resource",
-"class": "InvItem",
-"language": "GDScript",
-"path": "res://txy/inventory/inventory_items.gd"
-}, {
-"base": "Resource",
-"class": "InvSlot",
-"language": "GDScript",
-"path": "res://txy/inventory/inventory_collections/Inv_slot.gd"
-}, {
 "base": "Node",
 "class": "StateMachine",
 "language": "GDScript",
@@ -125,9 +110,6 @@ _global_script_class_icons={
 "HistoryRow": "",
 "Hitbox": "",
 "Hurtbox": "",
-"Inv": "",
-"InvItem": "",
-"InvSlot": "",
 "StateMachine": "",
 "StateNode": ""
 }
