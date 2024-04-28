@@ -310,10 +310,12 @@ state_machine_path = NodePath("../StateMachine")
 
 [node name="Hurt" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 11 )
+bus = "SFX"
 
 [node name="Walk" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 12 )
 volume_db = -20.0
+bus = "SFX"
 
 [connection signal="hurt" from="Hurtbox" to="." method="_on_Hurtbox_hurt"]
 [connection signal="timeout" from="FlickerTimer" to="." method="_on_FlickerTimer_timeout"]

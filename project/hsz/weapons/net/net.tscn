@@ -151,9 +151,11 @@ one_shot = true
 stream = ExtResource( 4 )
 volume_db = -12.0
 autoplay = true
+bus = "SFX"
 
 [node name="Open" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 5 )
+bus = "SFX"
 
 [connection signal="hit" from="Hitbox" to="." method="_on_Hitbox_hit"]
 [connection signal="hit" from="Detection" to="." method="_on_Detection_hit"]

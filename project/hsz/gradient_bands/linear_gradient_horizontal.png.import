@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/options.png-5b9baf3a4604515f8dd82ddad5a8e0d4.stex"
+path="res://.import/linear_gradient_horizontal.png-ee31ed9848a996c775b6c71dd2aa3222.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://hsz/scene/main_menu/options.png"
-dest_files=[ "res://.import/options.png-5b9baf3a4604515f8dd82ddad5a8e0d4.stex" ]
+source_file="res://hsz/gradient_bands/linear_gradient_horizontal.png"
+dest_files=[ "res://.import/linear_gradient_horizontal.png-ee31ed9848a996c775b6c71dd2aa3222.stex" ]
 
 [params]
 

@@ -24,8 +24,12 @@ func _ready():
 	stats.set_max_health(5)
 
 func _process(delta):
-	var temp_direction = get_input_aim_direction()
-	#var temp_direction = get_global_mouse_position() - global_position
+	var temp_direction: Vector2
+	if Global.use_gamepad:
+		temp_direction = get_input_aim_direction()
+	else:
+		temp_direction = get_global_mouse_position() - global_position
+		
 	if temp_direction.length() != 0.0:
 		aim_direction = temp_direction
 		arrow.rotation = right_direction.angle_to(aim_direction)

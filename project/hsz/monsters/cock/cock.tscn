@@ -161,9 +161,11 @@ interval_offset = 5.0
 [node name="Hurt" type="AudioStreamPlayer2D" parent="." index="16"]
 stream = ExtResource( 9 )
 volume_db = 10.0
+bus = "SFX"
 
 [node name="Env" type="AudioStreamPlayer2D" parent="." index="17"]
 stream = ExtResource( 10 )
+bus = "SFX"
 
 [connection signal="hurt" from="Hurtbox" to="Reaction" method="_on_Hurtbox_hurt"]
 [connection signal="timeout" from="CrowTimer" to="." method="_on_CrowTimer_timeout"]

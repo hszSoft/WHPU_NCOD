@@ -1678,10 +1678,12 @@ player_stats_path = NodePath("../../../Map/YSort/Daogu/Stats")
 stream = ExtResource( 29 )
 volume_db = -10.0
 autoplay = true
+bus = "BGM"
 
 [node name="BGM" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 39 )
 volume_db = -4.0
 autoplay = true
+bus = "BGM"
 
 [editable path="Map/YSort/Daogu"]
