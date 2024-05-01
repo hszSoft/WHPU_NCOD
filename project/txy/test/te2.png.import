@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/rabbit.png-d2a8eea891a866360f3e76c01e79576d.stex"
+path="res://.import/te2.png-2f025dba2e27b77b20cfab43f27cff36.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://txy/monsters/chicken_rabbit_assets/rabbit.png"
-dest_files=[ "res://.import/rabbit.png-d2a8eea891a866360f3e76c01e79576d.stex" ]
+source_file="res://txy/test/te2.png"
+dest_files=[ "res://.import/te2.png-2f025dba2e27b77b20cfab43f27cff36.stex" ]
 
 [params]
 

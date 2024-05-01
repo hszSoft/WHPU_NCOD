@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/cock.png-90d90245e3ae7b2daae39f33b7d7cc9c.stex"
+path="res://.import/mmexport1714287522496.png-04fc7f625aa707cdf6a693df6313c1a3.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://txy/monsters/chicken_rabbit_assets/cock.png"
-dest_files=[ "res://.import/cock.png-90d90245e3ae7b2daae39f33b7d7cc9c.stex" ]
+source_file="res://txy/indoor/indoor_assets/mmexport1714287522496.png"
+dest_files=[ "res://.import/mmexport1714287522496.png-04fc7f625aa707cdf6a693df6313c1a3.stex" ]
 
 [params]
 

@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://txy/test/te1.png" type="Texture" id=1]
+
+[node name="bridge" type="KinematicBody2D"]
+scale = Vector2( 10.6092, 2.04408 )
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+offset = Vector2( 0, -55 )
+region_enabled = true
+region_rect = Rect2( 169.501, 3.18595, 59.4484, 113.727 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]

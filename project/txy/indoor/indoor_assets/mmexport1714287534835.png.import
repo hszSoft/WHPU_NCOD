@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/HeartUIFull.png-77eb259d3695361bff27e148935a0f80.stex"
+path="res://.import/mmexport1714287534835.png-c4c46eb8648ced8f35989b7ba36feb07.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://txy/stats/stats_assets/HeartUIFull.png"
-dest_files=[ "res://.import/HeartUIFull.png-77eb259d3695361bff27e148935a0f80.stex" ]
+source_file="res://txy/indoor/indoor_assets/mmexport1714287534835.png"
+dest_files=[ "res://.import/mmexport1714287534835.png-c4c46eb8648ced8f35989b7ba36feb07.stex" ]
 
 [params]
 
