@@ -1,5 +1,8 @@
 extends Enemy
 
+func _ready():
+	enemy_type = "krabbit"
+
 func _process(delta):
 	if is_death:
 		return

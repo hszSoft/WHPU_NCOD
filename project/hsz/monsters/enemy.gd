@@ -1,12 +1,16 @@
 extends Character
 class_name Enemy
 
+signal death(type)
+
 export var flicker_interval: float = 0.1
 export var trapped_interval: float = 2.5
 export var invincible_interval: float = 3.0
 
 onready var speed_before_trapped: float = max_speed
 var is_death: bool = false
+
+var enemy_type: String
 
 func _on_Hurtbox_hurt(hitbox):
 	if hitbox.name != "Hitbox":
@@ -35,3 +39,4 @@ func _on_Stats_no_health():
 	$AnimationPlayer.play("Death")
 	yield($AnimationPlayer, "animation_finished")
 	queue_free()
+	emit_signal("death", enemy_type)

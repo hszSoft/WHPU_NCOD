@@ -1,4 +1,5 @@
 extends Node
+class_name WeaponGenerator
 
 export var items_path: NodePath
 onready var items = get_node(items_path) as PlayerItems 

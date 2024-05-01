@@ -16,6 +16,24 @@
 
 [node name="Indoor" type="Node2D"]
 
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_left = -1000.0
+margin_top = -1000.0
+margin_right = 1000.0
+margin_bottom = 1000.0
+color = Color( 0, 0, 0, 1 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 270, 70 )
+rotation = 0.00273508
+scale = Vector2( 1.5, 1.5 )
+current = true
+zoom = Vector2( 0.6, 0.6 )
+drag_margin_left = 0.05
+drag_margin_top = 0.05
+drag_margin_right = 0.05
+drag_margin_bottom = 0.05
+
 [node name="Map" type="Node2D" parent="."]
 
 [node name="Floor" type="TileMap" parent="Map"]
@@ -145,13 +163,3 @@ __meta__ = {
 
 [node name="Daogu" parent="YSort" instance=ExtResource( 13 )]
 position = Vector2( 161.311, 113.559 )
-
-[node name="Camera2D" type="Camera2D" parent="YSort/Daogu"]
-current = true
-zoom = Vector2( 0.6, 0.6 )
-drag_margin_h_enabled = true
-drag_margin_v_enabled = true
-drag_margin_left = 0.05
-drag_margin_top = 0.05
-drag_margin_right = 0.05
-drag_margin_bottom = 0.05

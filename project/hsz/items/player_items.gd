@@ -21,24 +21,37 @@ func _ready():
 	for i in range(9):
 		var item = ItemData.new()
 		items_data.append(item)
+
+func switch_to_last_item():
+	if item_in_hand != 0:
+		item_in_hand -= 1
+		emit_signal("item_in_hand_change", item_in_hand + 1, item_in_hand)
+	else:
+		item_in_hand = 8
+		emit_signal("item_in_hand_change", 0, 8)
 		
+func switch_to_next_item():
+	if item_in_hand != 8:
+		item_in_hand += 1
+		emit_signal("item_in_hand_change", item_in_hand - 1, item_in_hand)
+	else:
+		item_in_hand = 0
+		emit_signal("item_in_hand_change", 8, 0)
+
 func _process(delta):
 	if Input.is_action_just_pressed("last_item"):
-		if item_in_hand != 0:
-			item_in_hand -= 1
-			emit_signal("item_in_hand_change", item_in_hand + 1, item_in_hand)
-		else:
-			item_in_hand = 8
-			emit_signal("item_in_hand_change", 0, 8)
+		switch_to_last_item()
 	if Input.is_action_just_pressed("next_item"):
-		if item_in_hand != 8:
-			item_in_hand += 1
-			emit_signal("item_in_hand_change", item_in_hand - 1, item_in_hand)
-		else:
-			item_in_hand = 0
-			emit_signal("item_in_hand_change", 8, 0)
+		switch_to_next_item()
 	if Input.is_action_just_pressed("use_item"):
 		use_item()
+		
+func _input(event):
+	if event is InputEventMouseButton and event.pressed:
+		if event.button_index == BUTTON_WHEEL_UP:
+			switch_to_last_item()
+		elif event.button_index == BUTTON_WHEEL_DOWN:
+			switch_to_next_item()
 
 func find_new_place():
 	for idx in range(9):

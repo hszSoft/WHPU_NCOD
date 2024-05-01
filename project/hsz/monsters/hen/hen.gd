@@ -1,5 +1,8 @@
 extends Enemy
 
+func _ready():
+	enemy_type = "hen"
+
 func _process(delta):
 	if direction.x > 0 and $Sprite.scale.x > 0:
 		$Sprite.scale.x *= -1

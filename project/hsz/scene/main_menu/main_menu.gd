@@ -6,8 +6,22 @@ onready var exit_button := $InterfaceLayer/Control/Main/ExitButton
 
 var first_to_game: bool = true
 
+func to_main():
+	$AnimationPlayer.play("ToMain")
+	options_button.grab_focus()
+	
+func to_options():
+	$AnimationPlayer.play("ToOptions")
+	$InterfaceLayer/Control/Options/BackButton.grab_focus()
+
 func _ready():
 	start_button.grab_focus()
+	
+func _process(delta):
+	if Input.is_action_just_pressed("ui_cancel"):
+		if $InterfaceLayer/Control/Options.visible:
+			$Sound/Press.play()
+			to_main()
 
 func _on_StartButton_hover():
 	if first_to_game:
@@ -24,8 +38,7 @@ func _on_OptionsButton_hover():
 
 func _on_OptionsButton_press():
 	$Sound/Press.play()
-	$AnimationPlayer.play("ToOptions")
-	$InterfaceLayer/Control/Options/BackButton.grab_focus()
+	to_options()
 
 func _on_ExitButton_hover():
 	$Sound/Select.play()
@@ -39,8 +52,7 @@ func _on_BackButton_hover():
 
 func _on_BackButton_press():
 	$Sound/Press.play()
-	$AnimationPlayer.play("ToMain")
-	options_button.grab_focus()
+	to_main()
 
 func _on_SFXSlider_value_changed(value):
 	AudioServer.set_bus_volume_db(1, linear2db(value))
@@ -53,6 +65,7 @@ func _on_UseGamepad_hover():
 	$Sound/Select.play()
 
 func _on_UseGamepad_press():
+	$Sound/Select.play()
 	Global.use_gamepad = not Global.use_gamepad
 	if Global.use_gamepad:
 		$InterfaceLayer/Control/Options/UseGamepad.text = "手柄:开"

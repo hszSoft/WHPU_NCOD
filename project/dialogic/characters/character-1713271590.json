@@ -8,14 +8,14 @@
 	"name": "货商",
 	"nickname": "",
 	"nickname_bool": false,
-	"offset_x": 0,
+	"offset_x": 140,
 	"offset_y": 0,
 	"portraits": [
 		{
 			"name": "Default",
-			"path": ""
+			"path": "res://hsz/others/businessman.png"
 		}
 	],
-	"scale": 100,
+	"scale": 125,
 	"theme": ""
 }
