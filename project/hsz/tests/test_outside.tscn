@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=2]
+[gd_scene load_steps=43 format=2]
 
 [ext_resource path="res://hsz/weapons/weapon_generator.gd" type="Script" id=1]
 [ext_resource path="res://txy/stats/HeartUI.tscn" type="PackedScene" id=2]
@@ -21,13 +21,13 @@
 [ext_resource path="res://hsz/spritesheet/rock3.tscn" type="PackedScene" id=19]
 [ext_resource path="res://hsz/spritesheet/rock2.tscn" type="PackedScene" id=20]
 [ext_resource path="res://hsz/spritesheet/barrel.tscn" type="PackedScene" id=21]
-[ext_resource path="res://hsz/monsters/hen/hen.tscn" type="PackedScene" id=22]
-[ext_resource path="res://hsz/monsters/killer_rabbit/killer_rabbit.tscn" type="PackedScene" id=23]
+[ext_resource path="res://hsz/monsters/rabbit/rabbit.tscn" type="PackedScene" id=22]
+[ext_resource path="res://hsz/monsters/cock/cock.tscn" type="PackedScene" id=23]
 [ext_resource path="res://hsz/spritesheet/shrub5.tscn" type="PackedScene" id=24]
 [ext_resource path="res://hsz/spritesheet/box1.tscn" type="PackedScene" id=25]
 [ext_resource path="res://hsz/spritesheet/box2.tscn" type="PackedScene" id=26]
 [ext_resource path="res://hsz/character/daogu/daogu.tscn" type="PackedScene" id=27]
-[ext_resource path="res://hsz/monsters/rabbit/rabbit.tscn" type="PackedScene" id=28]
+[ext_resource path="res://hsz/monsters/killer_rabbit/killer_rabbit.tscn" type="PackedScene" id=28]
 [ext_resource path="res://hsz/audio/music/Fd_Oiso_Large.mp3" type="AudioStream" id=29]
 [ext_resource path="res://hsz/ui/item_column/item_column.tscn" type="PackedScene" id=30]
 [ext_resource path="res://hsz/spritesheet/shrub1.tscn" type="PackedScene" id=31]
@@ -40,7 +40,8 @@
 [ext_resource path="res://hsz/tests/test_outside.gd" type="Script" id=38]
 [ext_resource path="res://hsz/audio/music/EnvironmentBGM.mp3" type="AudioStream" id=39]
 [ext_resource path="res://hsz/ui/scoreboard/scoreboard.tscn" type="PackedScene" id=40]
-[ext_resource path="res://hsz/monsters/cock/cock.tscn" type="PackedScene" id=41]
+[ext_resource path="res://hsz/monsters/hen/hen.tscn" type="PackedScene" id=41]
+[ext_resource path="res://hsz/monsters/rect_region.gd" type="Script" id=42]
 
 [node name="TestLevel" type="Node2D"]
 script = ExtResource( 38 )
@@ -1642,14 +1643,43 @@ player_path = NodePath("../Map/YSort/Daogu")
 weapon_parent_path = NodePath("../Map/YSort")
 
 [node name="EnemyGenerator" parent="." instance=ExtResource( 4 )]
-position = Vector2( 200, 300 )
-enemy_list = [ ExtResource( 22 ), ExtResource( 41 ), ExtResource( 28 ), ExtResource( 23 ) ]
-spawn_region_width = 200.0
-spawn_region_height = 200.0
+enemy_list = [ ExtResource( 23 ), ExtResource( 41 ), ExtResource( 28 ), ExtResource( 22 ) ]
+weight_list = [ 15, 30, 5, 10 ]
 enemy_parent_path = NodePath("../Map/YSort/Monsters")
 scoreboard_path = NodePath("../CanvasLayer/Scoreboard")
+camera_path = NodePath("../Map/YSort/Daogu/Camera2D")
 
-[node name="Node2D" type="Node2D" parent="EnemyGenerator"]
+[node name="RectRegion1" type="Node2D" parent="EnemyGenerator"]
+position = Vector2( 200, 300 )
+script = ExtResource( 42 )
+
+[node name="RectRegion2" type="Node2D" parent="EnemyGenerator"]
+position = Vector2( 2734, 425 )
+script = ExtResource( 42 )
+
+[node name="RectRegion3" type="Node2D" parent="EnemyGenerator"]
+position = Vector2( 5, 2050 )
+script = ExtResource( 42 )
+
+[node name="RectRegion4" type="Node2D" parent="EnemyGenerator"]
+position = Vector2( 995, 763 )
+script = ExtResource( 42 )
+
+[node name="RectRegion5" type="Node2D" parent="EnemyGenerator"]
+position = Vector2( 1002, 2697 )
+script = ExtResource( 42 )
+
+[node name="RectRegion6" type="Node2D" parent="EnemyGenerator"]
+position = Vector2( 2423, 2664 )
+script = ExtResource( 42 )
+
+[node name="RectRegion7" type="Node2D" parent="EnemyGenerator"]
+position = Vector2( 2613, 1951 )
+script = ExtResource( 42 )
+
+[node name="RectRegion8" type="Node2D" parent="EnemyGenerator"]
+position = Vector2( 2200, 1421 )
+script = ExtResource( 42 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -1657,16 +1687,16 @@ scoreboard_path = NodePath("../CanvasLayer/Scoreboard")
 items_data_path = NodePath("../../PlayerItems")
 
 [node name="PlayerHealth" type="Control" parent="CanvasLayer"]
-margin_right = 40.0
-margin_bottom = 40.0
+margin_right = 1381.12
+margin_bottom = 720.0
 rect_scale = Vector2( 2.2, 2.2 )
 mouse_filter = 1
 
 [node name="HeartUI" parent="CanvasLayer/PlayerHealth" instance=ExtResource( 2 )]
-anchor_left = 0.027
-anchor_top = 0.079
-anchor_right = 0.027
-anchor_bottom = 0.079
+anchor_left = 0.005
+anchor_top = 0.015
+anchor_right = 0.005
+anchor_bottom = 0.015
 margin_left = 14.0
 margin_top = 6.58
 margin_right = 76.0

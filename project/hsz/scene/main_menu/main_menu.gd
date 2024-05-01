@@ -65,7 +65,7 @@ func _on_UseGamepad_hover():
 	$Sound/Select.play()
 
 func _on_UseGamepad_press():
-	$Sound/Select.play()
+	$Sound/Press.play()
 	Global.use_gamepad = not Global.use_gamepad
 	if Global.use_gamepad:
 		$InterfaceLayer/Control/Options/UseGamepad.text = "手柄:开"
