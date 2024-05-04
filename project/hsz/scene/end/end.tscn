@@ -1,0 +1,239 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://hsz/scene/end/end.gd" type="Script" id=1]
+[ext_resource path="res://hsz/ui/themes/ending_theme.tres" type="Theme" id=2]
+[ext_resource path="res://hsz/scene/end/yjh.png" type="Texture" id=3]
+[ext_resource path="res://hsz/scene/end/hsz.png" type="Texture" id=4]
+[ext_resource path="res://hsz/scene/end/lmx.png" type="Texture" id=5]
+[ext_resource path="res://hsz/scene/end/twz.png" type="Texture" id=6]
+[ext_resource path="res://hsz/scene/end/txy.png" type="Texture" id=7]
+
+[sub_resource type="Animation" id=2]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Camera2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( -0.1 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, -3550 ) ]
+}
+
+[sub_resource type="Animation" id=1]
+resource_name = "Scolling"
+length = 85.0
+step = 5.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Camera2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 85 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, -3550 ), Vector2( 0, 1950 ) ]
+}
+
+[node name="End" type="Node2D"]
+pause_mode = 2
+script = ExtResource( 1 )
+
+[node name="Timer1" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+autostart = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/RESET = SubResource( 2 )
+anims/Scolling = SubResource( 1 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_left = -1001.0
+margin_top = -4246.0
+margin_right = 999.0
+margin_bottom = 850.0
+color = Color( 0, 0, 0, 1 )
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+anchor_top = 0.982
+anchor_bottom = 0.982
+margin_left = -1001.0
+margin_top = -123.0
+margin_right = 999.0
+margin_bottom = 3317.01
+color = Color( 0, 0, 0, 1 )
+
+[node name="Label" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -179.5
+margin_top = -3587.0
+margin_right = 177.5
+margin_bottom = -3509.0
+theme = ExtResource( 2 )
+text = "感谢您的游玩！"
+align = 1
+valign = 1
+
+[node name="Label2" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -352.0
+margin_top = -2823.0
+margin_right = 350.0
+margin_bottom = -2745.0
+theme = ExtResource( 2 )
+text = "团队：WHPU游戏软件开发协会"
+
+[node name="Planner" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 88.0
+margin_top = -2362.0
+margin_right = 343.0
+margin_bottom = -2284.0
+theme = ExtResource( 2 )
+text = "策划：阿则"
+
+[node name="YJH" type="TextureRect" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -512.0
+margin_top = -2624.0
+margin_bottom = -2112.0
+texture = ExtResource( 3 )
+expand = true
+
+[node name="Label3" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 102.0
+margin_top = -1816.0
+margin_right = 337.0
+margin_bottom = -1738.0
+theme = ExtResource( 2 )
+text = "主程：hsz"
+
+[node name="HSZ" type="TextureRect" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -507.0
+margin_top = -2042.0
+margin_right = 5.0
+margin_bottom = -1530.0
+texture = ExtResource( 4 )
+expand = true
+
+[node name="Label4" type="Label" parent="."]
+margin_left = -1.0
+margin_top = -3246.0
+margin_right = 39.0
+margin_bottom = -3232.0
+text = "美术："
+
+[node name="LMX" type="TextureRect" parent="."]
+margin_left = -510.0
+margin_top = -1406.0
+margin_right = 2.0
+margin_bottom = -894.0
+texture = ExtResource( 5 )
+expand = true
+
+[node name="Label5" type="Label" parent="."]
+margin_left = 93.0
+margin_top = -1191.0
+margin_right = 399.0
+margin_bottom = -1113.0
+theme = ExtResource( 2 )
+text = "美术：林舟周"
+
+[node name="TWZ" type="TextureRect" parent="."]
+margin_left = -512.0
+margin_top = -764.0
+margin_bottom = -252.0
+texture = ExtResource( 6 )
+expand = true
+
+[node name="Label6" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 89.0
+margin_top = -548.0
+margin_right = 514.0
+margin_bottom = -470.0
+theme = ExtResource( 2 )
+text = "地编：thejayreally"
+
+[node name="TXY" type="TextureRect" parent="."]
+margin_left = -517.0
+margin_top = -88.0
+margin_right = -5.0
+margin_bottom = 582.0
+texture = ExtResource( 7 )
+expand = true
+
+[node name="Label7" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 84.0
+margin_top = 210.0
+margin_right = 594.0
+margin_bottom = 288.0
+theme = ExtResource( 2 )
+text = "脚本、测试：微微之光"
+
+[node name="Label8" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -332.5
+margin_top = 937.0
+margin_right = 330.5
+margin_bottom = 928.0
+theme = ExtResource( 2 )
+text = "感谢每一位参与制作的同学！"
+
+[node name="AndYou" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -253.0
+margin_top = 1865.0
+margin_right = 248.0
+margin_bottom = 2024.0
+theme = ExtResource( 2 )
+text = "And you...
+See you next dream..."
+align = 1
+valign = 1
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 0, -3550 )
+current = true
+zoom = Vector2( 1.5, 1.5 )
+
+[connection signal="timeout" from="Timer1" to="." method="_on_Timer1_timeout"]

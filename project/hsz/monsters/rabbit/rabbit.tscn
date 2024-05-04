@@ -13,6 +13,7 @@
 [ext_resource path="res://hsz/monsters/rabbit/reaction.gd" type="Script" id=11]
 
 [sub_resource type="CircleShape2D" id=3]
+radius = 8.0
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 6, 2 )
@@ -94,19 +95,19 @@ tracks/1/keys = {
 }
 
 [sub_resource type="CircleShape2D" id=4]
-radius = 256.0
+radius = 255.969
 
 [sub_resource type="CircleShape2D" id=5]
-radius = 64.0
+radius = 85.8374
 
 [sub_resource type="CircleShape2D" id=8]
-radius = 52.0
+radius = 38.3424
 
 [node name="Rabbit" instance=ExtResource( 1 )]
 scale = Vector2( 1.2, 1.2 )
 script = ExtResource( 2 )
 acceleration = 1800.0
-max_speed = 200.0
+max_speed = 300.0
 
 [node name="Reaction" type="Node" parent="." index="0"]
 script = ExtResource( 11 )
@@ -117,7 +118,7 @@ texture = ExtResource( 3 )
 hframes = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox" index="0"]
-position = Vector2( 0, -10 )
+position = Vector2( 0, -7 )
 shape = SubResource( 3 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="4"]
@@ -156,11 +157,13 @@ collision_mask = 2
 script = ExtResource( 6 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" index="0"]
+position = Vector2( 0, -6.66667 )
 shape = SubResource( 8 )
 
 [node name="ProvokingAI" parent="." index="12" instance=ExtResource( 4 )]
 
 [node name="StateViewer" parent="." index="13" instance=ExtResource( 7 )]
+visible = false
 state_machine_path = NodePath("../ProvokingAI")
 
 [node name="CrowTimer" type="Timer" parent="." index="15"]

@@ -1,10 +1,30 @@
 {
 	"events": [
 		{
+			"animation": "[Default]",
+			"animation_length": 0,
+			"change_mirror_portrait": false,
+			"change_z_index": false,
+			"character": "character-1713271662.json",
+			"event_id": "dialogic_002",
+			"mirror_portrait": false,
+			"portrait": "Default",
+			"portrait_definition": "",
+			"position": {
+				"0": false,
+				"1": false,
+				"2": false,
+				"3": false,
+				"4": false
+			},
+			"type": 0,
+			"z_index": 0
+		},
+		{
 			"character": "character-1713271662.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "于宋朝出生，道古自幼聪慧且对算术之学颇感兴趣,"
+			"text": "道古于宋朝出生，自幼聪慧且对算术之学颇感兴趣,"
 		},
 		{
 			"character": "character-1713271662.json",
@@ -41,11 +61,15 @@
 			"event_id": "dialogic_001",
 			"portrait": "",
 			"text": "于偏房准备入睡，但是辗转反侧难以入睡，遂挑灯夜读《九章算术》，想有所收获。"
+		},
+		{
+			"emit_signal": "unpause",
+			"event_id": "dialogic_040"
 		}
 	],
 	"metadata": {
 		"dialogic-version": "1.5.1",
 		"file": "timeline-1713266939.json",
-		"name": "Narrator_front"
+		"name": "narrator"
 	}
 }

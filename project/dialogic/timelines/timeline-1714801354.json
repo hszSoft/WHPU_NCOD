@@ -1,0 +1,45 @@
+{
+	"events": [
+		{
+			"animation": "[Default]",
+			"animation_length": 0,
+			"change_mirror_portrait": false,
+			"change_z_index": false,
+			"character": "character-1713271662.json",
+			"event_id": "dialogic_002",
+			"mirror_portrait": false,
+			"portrait": "Default",
+			"portrait_definition": "",
+			"position": {
+				"0": false,
+				"1": false,
+				"2": false,
+				"3": false,
+				"4": false
+			},
+			"type": 0,
+			"z_index": 0
+		},
+		{
+			"character": "character-1713271662.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "道古理解了真正的算术原理，此后便开始补全自己根据所理解的数学知识所写的数学大略，并于返官后将此作更名为数书九章且上奏皇帝。"
+		},
+		{
+			"character": "character-1713271662.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "皇帝得之大喜，下诏更名道古故宅为秦府，进爵道古为九韶公。"
+		},
+		{
+			"emit_signal": "end",
+			"event_id": "dialogic_040"
+		}
+	],
+	"metadata": {
+		"dialogic-version": "1.5.1",
+		"file": "timeline-1714801354.json",
+		"name": "epilogue"
+	}
+}

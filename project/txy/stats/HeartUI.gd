@@ -1,13 +1,13 @@
 extends Control
 
-export var hearts = 3 setget set_hearts
-export var max_hearts = 5 setget set_max_hearts
-
-export var player_stats_path: NodePath
-onready var player_stats := get_node(player_stats_path) as Stats
+export var hearts = 4 setget set_hearts
+export var max_hearts = 4 setget set_max_hearts
 
 onready var heartUIFull = $HeartUIFull
 onready var heartUIEmpty = $HeartUIEmpty
+
+export var player_stats_path: NodePath
+onready var player_stats := get_node(player_stats_path) as Stats
 
 func set_hearts(value):
 	#钳制 value ，返回一个不小于 min 且不大于 max 的值

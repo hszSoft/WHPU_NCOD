@@ -12,9 +12,6 @@ export var enable: bool = true
 export var enemy_parent_path: NodePath
 onready var enemy_parent := get_node(enemy_parent_path) as Node2D
 
-export var scoreboard_path: NodePath
-onready var scoreboard := get_node(scoreboard_path) as Scoreboard
-
 export var camera_path: NodePath
 onready var camera := get_node(camera_path) as Camera2D
 
@@ -55,7 +52,7 @@ func try_spawn_enemy():
 		return
 	var enemy := select_enemy()
 	enemy.position = position
-	enemy.connect("death", scoreboard, "_on_enemy_death")
+	enemy.connect("death", GameScene.player_items, "_on_enemy_death")
 	enemy_parent.add_child(enemy)
 
 func _on_RandomTimer_timeout():

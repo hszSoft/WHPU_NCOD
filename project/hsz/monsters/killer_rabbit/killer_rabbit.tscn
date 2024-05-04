@@ -13,7 +13,7 @@
 [ext_resource path="res://hsz/monsters/killer_rabbit/reaction.gd" type="Script" id=11]
 
 [sub_resource type="CircleShape2D" id=5]
-radius = 11.0454
+radius = 7.54615
 
 [sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 6, 1.5 )
@@ -95,7 +95,7 @@ tracks/1/keys = {
 }
 
 [sub_resource type="CircleShape2D" id=6]
-radius = 256.0
+radius = 356.0
 
 [sub_resource type="CircleShape2D" id=7]
 radius = 20.0
@@ -104,8 +104,8 @@ radius = 20.0
 scale = Vector2( 1.2, 1.2 )
 script = ExtResource( 2 )
 acceleration = 1800.0
-max_speed = 250.0
-invincible_interval = 3.5
+max_speed = 275.0
+invincible_interval = 3.6
 
 [node name="Reaction" type="Node" parent="." index="0"]
 script = ExtResource( 11 )
@@ -123,6 +123,9 @@ shape = SubResource( 5 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="4"]
 position = Vector2( 0, -1.5 )
 shape = SubResource( 4 )
+
+[node name="Stats" parent="." index="5"]
+max_health = 3
 
 [node name="AnimationPlayer" parent="." index="6"]
 autoplay = "Idle"
@@ -151,6 +154,7 @@ shape = SubResource( 7 )
 [node name="AggressiveWithDodge" parent="." index="11" instance=ExtResource( 4 )]
 
 [node name="StateViewer" parent="." index="12" instance=ExtResource( 7 )]
+visible = false
 state_machine_path = NodePath("../AggressiveWithDodge")
 
 [node name="CrowTimer" type="Timer" parent="." index="14"]

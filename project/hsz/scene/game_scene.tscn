@@ -1,0 +1,77 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://hsz/items/player_items.gd" type="Script" id=1]
+[ext_resource path="res://txy/stats/Stats.gd" type="Script" id=2]
+[ext_resource path="res://hsz/ui/store/store.tscn" type="PackedScene" id=3]
+[ext_resource path="res://hsz/ui/item_column/item_column.tscn" type="PackedScene" id=4]
+[ext_resource path="res://txy/stats/HeartUI.tscn" type="PackedScene" id=5]
+[ext_resource path="res://hsz/ui/scoreboard/scoreboard.tscn" type="PackedScene" id=6]
+[ext_resource path="res://hsz/scene/game_scene.gd" type="Script" id=7]
+[ext_resource path="res://hsz/ui/book/book.tscn" type="PackedScene" id=8]
+[ext_resource path="res://hsz/scene/hud.gd" type="Script" id=9]
+[ext_resource path="res://hsz/scene/outside/outside_data.gd" type="Script" id=10]
+
+[node name="GameScene" type="Node2D"]
+pause_mode = 2
+script = ExtResource( 7 )
+
+[node name="PlayerItems" type="Node" parent="."]
+script = ExtResource( 1 )
+
+[node name="PlayerStats" type="Node" parent="."]
+script = ExtResource( 2 )
+
+[node name="OutsideData" type="Node" parent="."]
+script = ExtResource( 10 )
+
+[node name="RecoveryTimer" type="Timer" parent="."]
+wait_time = 20.0
+autostart = true
+
+[node name="ItemCanUseTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="HUD" type="CanvasLayer" parent="."]
+visible = false
+script = ExtResource( 9 )
+
+[node name="ItemColumn" parent="HUD" instance=ExtResource( 4 )]
+items_data_path = NodePath("../../PlayerItems")
+
+[node name="PlayerHealth" type="Control" parent="HUD"]
+margin_right = 1381.12
+margin_bottom = 720.0
+rect_scale = Vector2( 2.2, 2.2 )
+mouse_filter = 2
+
+[node name="HeartUI" parent="HUD/PlayerHealth" instance=ExtResource( 5 )]
+anchor_left = 0.005
+anchor_top = 0.015
+anchor_right = 0.005
+anchor_bottom = 0.015
+margin_left = 14.0
+margin_top = 6.58
+margin_right = 76.0
+margin_bottom = 18.58
+mouse_filter = 1
+player_stats_path = NodePath("../../../PlayerStats")
+
+[node name="Scoreboard" parent="HUD" instance=ExtResource( 6 )]
+
+[node name="Store" parent="HUD" instance=ExtResource( 3 )]
+visible = false
+mouse_filter = 2
+
+[node name="Book" parent="HUD" instance=ExtResource( 8 )]
+visible = false
+
+[node name="BGM" type="AudioStreamPlayer" parent="."]
+bus = "BGM"
+
+[connection signal="chicken_num_change" from="PlayerItems" to="HUD" method="_on_PlayerItems_chicken_num_change"]
+[connection signal="money_change" from="PlayerItems" to="HUD" method="_on_PlayerItems_money_change"]
+[connection signal="rabbit_num_change" from="PlayerItems" to="HUD" method="_on_PlayerItems_rabbit_num_change"]
+[connection signal="skill_8_active" from="PlayerItems" to="HUD" method="_on_PlayerItems_skill_8_active"]
+[connection signal="skill_process_change" from="PlayerItems" to="HUD" method="_on_PlayerItems_skill_process_change"]
+[connection signal="timeout" from="RecoveryTimer" to="." method="_on_RecoveryTimer_timeout"]
+[connection signal="timeout" from="ItemCanUseTimer" to="." method="_on_ItemCanUseTimer_timeout"]

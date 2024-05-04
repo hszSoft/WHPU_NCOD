@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/gear_up.mp3-1412b3a562779bb92820bfb33a9a9cf9.mp3str"
+
+[deps]
+
+source_file="res://hsz/audio/music/gear_up.mp3"
+dest_files=[ "res://.import/gear_up.mp3-1412b3a562779bb92820bfb33a9a9cf9.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -1,0 +1,127 @@
+{
+	"events": [
+		{
+			"animation": "[Default]",
+			"animation_length": 0,
+			"change_mirror_portrait": false,
+			"change_z_index": false,
+			"character": "character-1712756061.json",
+			"event_id": "dialogic_002",
+			"mirror_portrait": false,
+			"portrait": "Default",
+			"portrait_definition": "",
+			"position": {
+				"0": true,
+				"1": false,
+				"2": false,
+				"3": false,
+				"4": false
+			},
+			"type": 0,
+			"z_index": 0
+		},
+		{
+			"animation": "[Default]",
+			"animation_length": 0,
+			"change_mirror_portrait": false,
+			"change_z_index": false,
+			"character": "character-1713271590.json",
+			"event_id": "dialogic_002",
+			"mirror_portrait": false,
+			"portrait": "Default",
+			"portrait_definition": "",
+			"position": {
+				"0": false,
+				"1": false,
+				"2": false,
+				"3": false,
+				"4": true
+			},
+			"type": 0,
+			"z_index": 0
+		},
+		{
+			"character": "character-1713271590.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "刚好满足我的需求，仁兄真是神机妙算啊。"
+		},
+		{
+			"character": "character-1712756061.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "哪里哪里，不过举手之劳罢了。"
+		},
+		{
+			"character": "character-1713271590.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "仁兄还真是谦虚啊，接下来我需要的鸡和兔要求一共有8首20足，不知仁兄可否继续帮帮忙呢？"
+		},
+		{
+			"character": "character-1712756061.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "这等实惠的买卖，我又怎好意思拒绝了呢? 请继续吧。"
+		},
+		{
+			"character": "character-1713271590.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "痛快! 我就喜欢仁兄这脾气。"
+		},
+		{
+			"character": "character-1713271590.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "不过还请仁兄注意，这时候山里的鸡群提高了它们的警觉性，这时候你再去，怕是要遭受公鸡的攻击啊。"
+		},
+		{
+			"character": "character-1712756061.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "公鸡的攻击? 怎么一回事?"
+		},
+		{
+			"character": "character-1713271590.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "接下来请仁兄多多注意你看到的鸡喽! 那种个头稍大一点的鸡是会攻击人的!"
+		},
+		{
+			"character": "character-1712756061.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "好生奇怪，为什么我区区一个人类要害怕一只鸡了呢? 不过还得多多感谢朋友, 我定当注意。"
+		},
+		{
+			"call_node": {
+				"arguments": [
+					"task2"
+				],
+				"method_name": "set_current_task",
+				"target_node_path": "GameScene/PlayerItems"
+			},
+			"event_id": "dialogic_042"
+		},
+		{
+			"call_node": {
+				"arguments": [
+
+				],
+				"method_name": "enable_egenerator2",
+				"target_node_path": "GameScene/OutsideData"
+			},
+			"event_id": "dialogic_042"
+		},
+		{
+			"emit_signal": "unpause",
+			"event_id": "dialogic_040"
+		}
+	],
+	"metadata": {
+		"dialogic-version": "1.5.1",
+		"file": "timeline-1714675338.json",
+		"name": "task2"
+	}
+}

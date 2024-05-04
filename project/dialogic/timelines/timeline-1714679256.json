@@ -1,0 +1,207 @@
+{
+	"events": [
+		{
+			"animation": "[Default]",
+			"animation_length": 0,
+			"change_mirror_portrait": false,
+			"change_z_index": false,
+			"character": "character-1712756061.json",
+			"event_id": "dialogic_002",
+			"mirror_portrait": false,
+			"portrait": "Default",
+			"portrait_definition": "",
+			"position": {
+				"0": true,
+				"1": false,
+				"2": false,
+				"3": false,
+				"4": false
+			},
+			"type": 0,
+			"z_index": 0
+		},
+		{
+			"character": "character-1712756061.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "咦? 我这是...身处何地？"
+		},
+		{
+			"character": "character-1712756061.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "阁下是? 是在敝舍前等待何人吗?"
+		},
+		{
+			"animation": "[Default]",
+			"animation_length": 0,
+			"change_mirror_portrait": false,
+			"change_z_index": false,
+			"character": "character-1713271590.json",
+			"event_id": "dialogic_002",
+			"mirror_portrait": false,
+			"portrait": "Default",
+			"portrait_definition": "",
+			"position": {
+				"0": false,
+				"1": false,
+				"2": false,
+				"3": false,
+				"4": true
+			},
+			"type": 0,
+			"z_index": 0
+		},
+		{
+			"character": "character-1713271590.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "朋友，我想委托你抓些鸡和兔。"
+		},
+		{
+			"character": "character-1713271590.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "县里最近来了位官太爷巡视，那些芝麻官想好生招待这位大人，好攀上这层关系，于是委托我找你买一些野味；"
+		},
+		{
+			"character": "character-1713271590.json",
+			"event_id": "dialogic_010",
+			"options": [
+
+			],
+			"portrait": "",
+			"question": "这几箱小小的礼品，不成敬意，还望赏我几分薄面。"
+		},
+		{
+			"choice": "接受",
+			"condition": "",
+			"definition": "",
+			"event_id": "dialogic_011",
+			"value": ""
+		},
+		{
+			"character": "character-1712756061.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "既然如此，我就当原因予你一份风水人情，毕竟相见是缘。"
+		},
+		{
+			"character": "character-1713271590.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "朋友，请放心，我经商向来公平公正不亏待每一位客人。"
+		},
+		{
+			"choice": "拒绝",
+			"condition": "",
+			"definition": "",
+			"event_id": "dialogic_011",
+			"value": ""
+		},
+		{
+			"character": "character-1712756061.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "可惜我身居樊笼已久，逍遥半载，不为钱财动摇。"
+		},
+		{
+			"character": "character-1713271590.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "岂是如此? 朋友，是在下为那五斗米折腰，而需要你帮助我罢了，"
+		},
+		{
+			"character": "character-1713271590.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "何况身处尘世，多一些钱财总不会是坏事，"
+		},
+		{
+			"character": "character-1713271590.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "我们这些货商就搞这个吃饭了，还请朋友多多帮助。"
+		},
+		{
+			"character": "character-1712756061.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "阁下说的确实有几分道理，又何况伸手不打笑脸人，那就当是你我之间不打不相识，你出钱我出力，合作愉快。"
+		},
+		{
+			"character": "character-1713271590.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "这位仁兄真是好见识，合作愉快!"
+		},
+		{
+			"event_id": "dialogic_013"
+		},
+		{
+			"character": "character-1713271590.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "不过呢，这山里的生物可非常奇怪，不知受何物影响，具备一定的攻击性啊。"
+		},
+		{
+			"character": "character-1713271590.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "好在我这有一些妙物可以帮助仁兄，想到能够帮助仁兄，便宜卖给你了。"
+		},
+		{
+			"character": "character-1713271590.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "仁兄莫要担心钱财不足，我这里能够给予仁兄额外的奖励，只要仁兄能够达到我特殊的需求便可。"
+		},
+		{
+			"character": "character-1712756061.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "有意思，什么需求? 便说来听听看。"
+		},
+		{
+			"character": "character-1713271590.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "若你接下来能够一次性提交给我鸡和兔一共有6首18足，那么我能多给你五成的铜赏钱。"
+		},
+		{
+			"character": "character-1712756061.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "不错，你这个要求我应了。"
+		},
+		{
+			"call_node": {
+				"arguments": [
+					"task1"
+				],
+				"method_name": "set_current_task",
+				"target_node_path": "GameScene/PlayerItems"
+			},
+			"event_id": "dialogic_042"
+		},
+		{
+			"call_node": {
+				"arguments": [
+
+				],
+				"method_name": "enable_egenerator1",
+				"target_node_path": "GameScene/OutsideData"
+			},
+			"event_id": "dialogic_042"
+		},
+		{
+			"emit_signal": "unpause",
+			"event_id": "dialogic_040"
+		}
+	],
+	"metadata": {
+		"dialogic-version": "1.5.1",
+		"file": "timeline-1714679256.json",
+		"name": "task1"
+	}
+}

@@ -1,7 +1,7 @@
 extends Character
 
-export var duration: float = 3.0
-export var flying_duration: float = 0.8
+export var duration: float = 1.5
+export var flying_duration: float = 0.4
 export var move_direction := Vector2(1.0, 0.0)
 
 var is_moving_over: bool = false

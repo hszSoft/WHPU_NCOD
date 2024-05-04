@@ -1,7 +1,7 @@
 extends StateMachine
 
 onready var idle_timer := $Idle/RandomTimer
-export var idle_transition_probability: float = 30.0
+export var idle_transition_probability: float = 80.0
 var idle_to_wander: bool = false
 
 func should_fear() -> bool:

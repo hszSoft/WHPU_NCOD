@@ -16,7 +16,7 @@ position = Vector2( -9.53674e-07, -11 )
 scale = Vector2( 1.71094, 1.78125 )
 texture = ExtResource( 2 )
 
-[node name="Shadow_npc" type="Sprite" parent="."]
+[node name="Shadow" type="Sprite" parent="."]
 position = Vector2( 0, 7 )
 scale = Vector2( 2.17857, 3.10715 )
 texture = ExtResource( 3 )

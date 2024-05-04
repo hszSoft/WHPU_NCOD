@@ -15,8 +15,8 @@ default_state_path = NodePath("Idle")
 
 [node name="RandomTimer" type="Timer" parent="Idle"]
 script = ExtResource( 6 )
-interval_base = 1.6
-interval_offset = 0.3
+interval_base = 1.2
+interval_offset = 0.5
 
 [node name="Wander" parent="." instance=ExtResource( 5 )]
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://hsz/spritesheet/opend_box.tscn" type="PackedScene" id=1]
 [ext_resource path="res://hsz/spritesheet/desk.tscn" type="PackedScene" id=2]
@@ -13,8 +13,17 @@
 [ext_resource path="res://hsz/spritesheet/thatch_pile.tscn" type="PackedScene" id=11]
 [ext_resource path="res://hsz/spritesheet/thatch_grass.tscn" type="PackedScene" id=12]
 [ext_resource path="res://hsz/character/daogu/daogu.tscn" type="PackedScene" id=13]
+[ext_resource path="res://hsz/spritesheet/candle.tscn" type="PackedScene" id=14]
+[ext_resource path="res://twz/scene/indoor.gd" type="Script" id=15]
+[ext_resource path="res://hsz/utils/detection.gd" type="Script" id=16]
+[ext_resource path="res://hsz/audio/sfx/walk_on_floor.wav" type="AudioStream" id=17]
+[ext_resource path="res://hsz/audio/music/gear_up.mp3" type="AudioStream" id=18]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 40, 10 )
 
 [node name="Indoor" type="Node2D"]
+script = ExtResource( 15 )
 
 [node name="ColorRect" type="ColorRect" parent="."]
 margin_left = -1000.0
@@ -162,4 +171,34 @@ __meta__ = {
 }
 
 [node name="Daogu" parent="YSort" instance=ExtResource( 13 )]
-position = Vector2( 161.311, 113.559 )
+position = Vector2( 197.708, 258.46 )
+
+[node name="Sprite" parent="YSort/Daogu" index="2"]
+frame = 18
+
+[node name="AnimationPlayer" parent="YSort/Daogu" index="5"]
+autoplay = "IdleUp"
+
+[node name="Walk" parent="YSort/Daogu" index="12"]
+stream = ExtResource( 17 )
+
+[node name="Candle" parent="." instance=ExtResource( 14 )]
+position = Vector2( 161, 27 )
+scale = Vector2( 0.4, 0.4 )
+
+[node name="Outdoor" type="Area2D" parent="."]
+position = Vector2( 197, 295 )
+collision_layer = 0
+collision_mask = 2
+script = ExtResource( 16 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Outdoor"]
+shape = SubResource( 1 )
+
+[node name="BGM" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 18 )
+autoplay = true
+
+[connection signal="find_target" from="Outdoor" to="." method="_on_Detection_find_target"]
+
+[editable path="YSort/Daogu"]

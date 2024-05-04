@@ -1568,7 +1568,7 @@ position = Vector2( 1136, 93 )
 position = Vector2( 1153, 583 )
 
 [node name="Daogu" parent="Map/YSort" instance=ExtResource( 27 )]
-position = Vector2( -9.99998, -28 )
+position = Vector2( -112, -108 )
 max_speed = 150.0
 
 [node name="Camera2D" type="Camera2D" parent="Map/YSort/Daogu"]
@@ -1717,5 +1717,3 @@ stream = ExtResource( 39 )
 volume_db = -4.0
 autoplay = true
 bus = "BGM"
-
-[editable path="Map/YSort/Daogu"]

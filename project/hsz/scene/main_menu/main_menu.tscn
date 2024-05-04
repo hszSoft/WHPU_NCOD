@@ -100,6 +100,7 @@ script = ExtResource( 6 )
 [node name="Control" type="Control" parent="InterfaceLayer"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+mouse_filter = 1
 
 [node name="Background" type="TextureRect" parent="InterfaceLayer/Control"]
 anchor_right = 1.0

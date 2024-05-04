@@ -16,6 +16,8 @@ func to_options():
 
 func _ready():
 	start_button.grab_focus()
+	yield(Global, "start_finished")
+	Global.color_rect.visible = false
 	
 func _process(delta):
 	if Input.is_action_just_pressed("ui_cancel"):
@@ -31,7 +33,7 @@ func _on_StartButton_hover():
 
 func _on_StartButton_press():
 	$Sound/Press.play()
-	Global.change_scene("res://hsz/tests/test_outside.tscn")
+	Global.change_scene("res://hsz/scene/indoor/indoor.tscn")
 
 func _on_OptionsButton_hover():
 	$Sound/Select.play()
