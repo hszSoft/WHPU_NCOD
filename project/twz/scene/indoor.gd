@@ -6,6 +6,7 @@ func _ready():
 	GameScene.hud.visible = true
 	GameScene.player_items.item_can_use = false
 	if GameScene.player_items.current_task == "none":
+		GameScene.player_items.add_item(ItemsDatabase.NET, -1)
 		$Entity/Daogu.position = Vector2(490, 60)
 		daogu_ap.play("IdleLeft")
 		var instanced_book = preload("res://hsz/spritesheet/book.tscn").instance()

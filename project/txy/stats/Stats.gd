@@ -21,3 +21,7 @@ func set_health(value):
 		
 func _ready():
 	self.health = max_health
+
+func reset():
+	set_max_health(4)
+	set_health(4)

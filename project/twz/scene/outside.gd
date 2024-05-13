@@ -16,6 +16,7 @@ func _ready():
 		GameScene.start_dialog("task1")
 	GameScene.hud.set_target_num(3, 3)
 
+
 func _on_skill_6_active():
 	$EnemyGenerator3.weight_list[1] = 5
 

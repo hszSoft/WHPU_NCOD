@@ -6,9 +6,6 @@ onready var outside_data: OutsideData = $OutsideData
 onready var hud: CanvasLayer = $HUD
 onready var bgm: AudioStreamPlayer = $BGM
 
-func _ready():
-	player_items.add_item(ItemsDatabase.NET, -1)
-
 func _on_RecoveryTimer_timeout():
 	player_stats.health += 1
 
@@ -53,6 +50,14 @@ func start_dialog(name):
 func unpause_game():
 	get_tree().paused = false
 	$ItemCanUseTimer.start()
+
+func reset_game():
+	player_items.reset()
+	player_stats.reset()
+	outside_data.reset()
+	hud.reset()
+	hud.visible = false	
+	Global.color_rect.visible = false
 
 func _on_dialogic_signal(val):
 	if val == "unpause":

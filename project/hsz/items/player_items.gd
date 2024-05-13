@@ -62,6 +62,7 @@ func find_new_place():
 	return -1
 
 func add_item(id: int, quantity: int):
+	print("add: ", id)
 	if items_map.has(id):
 		var idx = items_map.get(id)
 		var item_data: ItemData = items_data[idx]
@@ -91,14 +92,9 @@ func use_item():
 	if not items_data[item_in_hand].can_use:
 		return
 	if items_data[item_in_hand].id != -1:
-		if items_data[item_in_hand].quantity < 0:
+		if items_data[item_in_hand].quantity > 0:
 			items_data[item_in_hand].quantity -= 1
 		emit_signal("item_use", items_data[item_in_hand].id)
-		if items_data[item_in_hand].quantity == 0:
-			items_map.erase(items_data[item_in_hand].id)
-			items_data[item_in_hand].id = -1
-			items_data[item_in_hand].quantity = 0
-		emit_signal("item_change", item_in_hand, items_data[item_in_hand].id, items_data[item_in_hand].quantity)
 		
 		var cooling_time = ItemsDatabase.items_cooling[items_data[item_in_hand].id]
 		if cooling_time != 0.0:
@@ -109,6 +105,13 @@ func use_item():
 			cooling_timer.one_shot = true
 			cooling_timer.connect("timeout", self, "_on_cooling_end", [cooling_timer, item_in_hand])
 			add_child(cooling_timer)
+		
+		if items_data[item_in_hand].quantity == 0:
+			items_map.erase(items_data[item_in_hand].id)
+			items_data[item_in_hand].id = -1
+			items_data[item_in_hand].quantity = 0
+		emit_signal("item_change", item_in_hand, items_data[item_in_hand].id, items_data[item_in_hand].quantity)
+
 
 func _on_cooling_end(timer, idx):
 	items_data[idx].can_use = true
@@ -256,3 +259,32 @@ func trigger_new_skill(val):
 		current_task = "finish"
 		GameScene.hud.set_target_num(0, 0)
 		emit_signal("obstacles_destroy")
+		
+func reset():
+	is_skill_1 = false
+	is_skill_4 = false
+	is_skill_5 = false
+	is_skill_6 = false
+	is_skill_7 = false
+	is_skill_8 = false
+	is_skill_9 = false
+	
+	has_compass = false
+	set_money(0)
+	set_chicken_num(0)
+	set_rabbit_num(0)
+	GameScene.hud.set_target_num(0, 0)
+	
+	item_in_hand = 0
+	item_can_use = true
+	chicken_price = 20
+	rabbit_price = 30
+	is_over = false
+	current_task = "none"
+	current_skill_process = -1
+	items_data.clear()
+	items_map.clear()
+	
+	for i in range(9):
+		var item = ItemData.new()
+		items_data.append(item)

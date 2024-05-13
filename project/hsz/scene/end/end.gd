@@ -7,4 +7,6 @@ func _ready():
 func _on_Timer1_timeout():
 	$AnimationPlayer.play("Scolling")
 	yield($AnimationPlayer, "animation_finished")
+	Global.color_rect.visible = true
 	Global.change_scene_with_black("res://hsz/scene/main_menu/main_menu.tscn", 1.0)
+	GameScene.reset_game()

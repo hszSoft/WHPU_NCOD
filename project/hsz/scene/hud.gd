@@ -18,3 +18,10 @@ func _on_PlayerItems_skill_process_change(val):
 
 func _on_PlayerItems_skill_8_active():
 	$Scoreboard.show_target_num()
+
+func reset():
+	$Scoreboard.hide_target_num()
+	$Store.reset()
+	GameScene.close_store()
+	$Book.reset()
+	GameScene.close_book()

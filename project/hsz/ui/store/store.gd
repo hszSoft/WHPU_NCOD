@@ -30,3 +30,8 @@ func _on_Button4_pressed():
 
 func _on_Quit_pressed():
 	GameScene.close_store()
+
+func reset():
+	$TextureRect/Goods/Commodity2.visible = false
+	$TextureRect/Goods/Commodity3.visible = true
+	$TextureRect/Goods/Commodity4.visible = true

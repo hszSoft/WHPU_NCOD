@@ -25,3 +25,6 @@ func _on_Learn_pressed():
 
 func _on_Quit_pressed():
 	GameScene.close_book()
+
+func reset():
+	set_current_process(0)

@@ -93,6 +93,7 @@ tracks/1/keys = {
 }
 
 [node name="MainMenu" type="Node2D"]
+pause_mode = 2
 script = ExtResource( 6 )
 
 [node name="InterfaceLayer" type="CanvasLayer" parent="."]

@@ -18,6 +18,7 @@ func _ready():
 	start_button.grab_focus()
 	yield(Global, "start_finished")
 	Global.color_rect.visible = false
+	GameScene.reset_game()
 	
 func _process(delta):
 	if Input.is_action_just_pressed("ui_cancel"):

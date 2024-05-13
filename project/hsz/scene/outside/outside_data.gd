@@ -18,3 +18,9 @@ func enable_egenerator3():
 
 func _ready():
 	pass
+	
+func reset():
+	obstacles_destroy = false
+	enemy_generator_1_enable = false
+	enemy_generator_2_enable = false
+	enemy_generator_3_enable = false
